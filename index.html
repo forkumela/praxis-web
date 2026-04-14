@@ -37,7 +37,7 @@
       --bg-soft: #f0f4f8;
       --text: #1e2c34;
       --text-soft: #4a5b67;
-      --white: #ffffff;
+      --white: #cbddf7;
       --border: #e2edf2;
       --shadow-sm: 0 8px 20px rgba(0, 32, 32, 0.06);
       --shadow-md: 0 20px 35px -12px rgba(0, 40, 40, 0.12);
@@ -105,53 +105,42 @@
       z-index: 110;
     }
 
-   .lang-flex {
-  display: flex;
-  justify-content: flex-end;
-  gap: 0.65rem;
-  padding: 0.65rem 0;
-  flex-wrap: wrap;
-}
+    .lang-flex {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.65rem;
+      padding: 0.65rem 0;
+      flex-wrap: wrap;
+    }
 
-.lang-btn {
-  border: none;
-  background: transparent;
-  padding: 0.55rem 0.95rem;
-  font-weight: 700;
-  font-size: 0.82rem;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: 0.2s ease;
-  color: var(--text);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  line-height: 1;
-}
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 0.55rem 0.8rem;
+      font-size: 1.1rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: 0.2s ease;
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      min-width: 48px;
+      min-height: 40px;
+    }
 
-.lang-btn.active {
-  background: var(--primary);
-  color: var(--white);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
+    .lang-btn.active {
+      background: var(--primary);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
 
-.lang-btn:hover:not(.active) {
-  background: rgba(27,126,92,0.10);
-}
+    .lang-btn:hover:not(.active) {
+      background: rgba(27,126,92,0.10);
+    }
 
-.flag {
-  font-size: 1rem;
-  display: inline-flex;
-  align-items: center;
-}
-
-.lang-code {
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0.03em;
-}
     header {
-      background: rgba(255,255,255,0.95);
+      background: rgba(203, 221, 247, 0.95);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border);
       position: sticky;
@@ -207,7 +196,7 @@
 
     .hero-section {
       padding: 2.8rem 0 2rem;
-      background: linear-gradient(120deg, #f3faf7 0%, #ffffff 100%);
+      background: linear-gradient(120deg, #f3faf7 0%, #cbddf7 100%);
     }
 
     .hero-card {
@@ -220,7 +209,7 @@
 
     .hero-top {
       background: linear-gradient(105deg, var(--primary) 0%, #289b74 100%);
-      color: var(--white);
+      color: #ffffff;
       padding: 2rem 2.5rem 1.7rem;
     }
 
@@ -240,7 +229,7 @@
       display: inline-block;
       background: rgba(255,255,255,0.18);
       border: 1px solid rgba(255,255,255,0.30);
-      color: var(--white);
+      color: #ed2d40;
       border-radius: 999px;
       padding: 0.45rem 0.9rem;
       font-size: 0.82rem;
@@ -374,7 +363,7 @@
 
     .btn-primary {
       background: var(--primary);
-      color: var(--white);
+      color: #ffffff;
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
 
@@ -554,7 +543,7 @@
     }
 
     .footer-links a:hover {
-      color: var(--white);
+      color: #ffffff;
     }
 
     @media (max-width: 920px) {
@@ -640,9 +629,9 @@
 
   <div class="lang-bar">
     <div class="container lang-flex">
-      <button class="lang-btn active" data-lang="de" type="button">🇩🇪 DE</button>
-      <button class="lang-btn" data-lang="en" type="button">🇬🇧 EN</button>
-      <button class="lang-btn" data-lang="fr" type="button">🇫🇷 FR</button>
+      <button class="lang-btn active" data-lang="de" type="button" aria-label="Deutsch">🇩🇪</button>
+      <button class="lang-btn" data-lang="en" type="button" aria-label="English">🇬🇧</button>
+      <button class="lang-btn" data-lang="fr" type="button" aria-label="Français">🇫🇷</button>
     </div>
   </div>
 
