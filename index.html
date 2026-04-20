@@ -26,18 +26,18 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --primary: #49e048;
+      --primary: #1b7e5c;
       --primary-dark: #0f5e44;
-      --primary-light: #007dff;
+      --primary-light: #dff3ec;
       --primary-soft: #eef9f4;
       --accent-blue: #a9c3d4;
       --accent-blue-dark: #2f6f95;
       --accent-blue-light: #4ea3d8;
       --bg: #f9fbfd;
-      --bg-soft: #dcffdb;
+      --bg-soft: #f0f4f8;
       --text: #1e2c34;
       --text-soft: #4a5b67;
-      --white: #cbddf7;
+      --white: #ffffff;
       --border: #e2edf2;
       --shadow-sm: 0 8px 20px rgba(0, 32, 32, 0.06);
       --shadow-md: 0 20px 35px -12px rgba(0, 40, 40, 0.12);
@@ -51,7 +51,7 @@
 
     body {
       font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-      background: var(--bg);
+      background: linear-gradient(120deg, #f3faf7 0%, #cbddf7 100%);
       color: var(--text);
       line-height: 1.6;
     }
@@ -93,13 +93,13 @@
       height: auto;
       padding: 10px 14px;
       background: var(--primary-dark);
-      color: var(--white);
+      color: #ffffff;
       border-radius: 10px;
       z-index: 1000;
     }
 
     .lang-bar {
-      background: var(--bg-soft);
+      background: rgba(255,255,255,0.45);
       border-bottom: 1px solid var(--border);
       position: relative;
       z-index: 110;
@@ -140,7 +140,7 @@
     }
 
     header {
-      background: rgba(203, 221, 247, 0.95);
+      background: rgba(255,255,255,0.78);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border);
       position: sticky;
@@ -154,10 +154,22 @@
       align-items: center;
       gap: 1rem;
       flex-wrap: wrap;
-      padding: 1.2rem 0;
+      padding: 1rem 0;
     }
 
-    .logo h1 {
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .header-logo-img {
+      height: 64px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .logo-text h1 {
       font-size: 1.8rem;
       font-weight: 800;
       letter-spacing: -0.03em;
@@ -167,7 +179,7 @@
       color: transparent;
     }
 
-    .logo p {
+    .logo-text p {
       font-size: 0.9rem;
       color: var(--text-soft);
       font-weight: 600;
@@ -195,8 +207,7 @@
     }
 
     .hero-section {
-      padding: 2.8rem 0 2rem;
-      background: linear-gradient(120deg, #f3faf7 0%, #cbddf7 100%);
+      padding: 2.2rem 0 2rem;
     }
 
     .hero-card {
@@ -223,20 +234,6 @@
 
     .hero-brand-block {
       flex: 1 1 560px;
-    }
-
-    .hero-house-badge {
-      display: inline-block;
-      background: rgba(255,255,255,0.18);
-      border: 1px solid rgba(255,255,255,0.30);
-      color: #ed2d40;
-      border-radius: 999px;
-      padding: 0.45rem 0.9rem;
-      font-size: 0.82rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      white-space: nowrap;
     }
 
     .hero-sub {
@@ -274,12 +271,31 @@
       margin-bottom: 0.1rem;
     }
 
+    .hero-logo-wrap {
+      flex: 0 0 auto;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+
+    .hero-logo-img {
+      max-width: 210px;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 18px;
+      padding: 0.55rem;
+    }
+
     .hero-bottom {
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
       align-items: center;
       padding: 2rem 2.5rem;
+      background: rgba(203, 221, 247, 0.55);
     }
 
     .doctor-media {
@@ -295,13 +311,13 @@
     }
 
     .doc-img {
-     width: 100%;
-     aspect-ratio: 4 / 5;
-     object-fit: cover;
-     border-radius: 20px;
-     display: block;
-     background: #cfe9de;
-     }
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 20px;
+      display: block;
+      background: #cfe9de;
+    }
 
     .contact-hero {
       flex: 2 1 480px;
@@ -380,8 +396,10 @@
     }
 
     .section {
-      padding: 3.4rem 0;
+      padding: 3.2rem 0;
       border-bottom: 1px solid var(--border);
+      scroll-margin-top: 110px;
+      background: rgba(255,255,255,0.5);
     }
 
     .section:last-of-type {
@@ -570,6 +588,10 @@
         align-items: center;
         text-align: center;
       }
+
+      .logo {
+        flex-direction: column;
+      }
     }
 
     @media (max-width: 560px) {
@@ -599,6 +621,14 @@
       .footer-links a {
         margin: 0 0.6rem;
       }
+
+      .header-logo-img {
+        height: 56px;
+      }
+
+      .hero-logo-img {
+        max-width: 170px;
+      }
     }
   </style>
 
@@ -606,7 +636,7 @@
   {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
-    "name": "Praxis Lyn Ayuk Anyi",
+    "name": "Praxis Frau Lyn Ayuk Anyi",
     "medicalSpecialty": "GeneralPractice",
     "address": {
       "@type": "PostalAddress",
@@ -634,8 +664,11 @@
   <header>
     <div class="container header-grid">
       <div class="logo">
-        <h1>Praxis Lyn Ayuk Anyi</h1>
-        <p data-key="brand_subtitle">Fachärztin für Allgemeinmedizin</p>
+        <img class="header-logo-img" src="logo.png" alt="Brücken Ärzte Logo" />
+        <div class="logo-text">
+          <h1>Praxis Frau Lyn Ayuk Anyi</h1>
+          <p data-key="brand_subtitle">Fachärztin für Allgemeinmedizin</p>
+        </div>
       </div>
 
       <nav aria-label="Hauptnavigation">
@@ -658,7 +691,7 @@
             <div class="hero-top-inner">
               <div class="hero-brand-block">
                 <div class="hero-sub" data-key="hero_line_1">Ihre Hausarztpraxis in Frankfurt am Main</div>
-                <div class="hero-name">Praxis Lyn Ayuk Anyi</div>
+                <div class="hero-name">Praxis Frau Lyn Ayuk Anyi</div>
                 <div class="hero-title" data-key="hero_line_2">Fachärztin für Allgemeinmedizin</div>
 
                 <div class="hero-welcome">
@@ -667,16 +700,17 @@
                 </div>
               </div>
 
-              <div class="hero-house-badge">BRÜCKEN ÄRZTE</div>
+              <div class="hero-logo-wrap">
+                <img class="hero-logo-img" src="logo.png" alt="Brücken Ärzte Logo" />
+              </div>
             </div>
           </div>
 
           <div class="hero-bottom">
             <div class="doctor-media">
-            <div class="doctor-frame">
-            <img class="doc-img" src="lyn_photo.jpeg" alt="Porträt von Lyn Ayuk Anyi" />
-            </div>
-            </div>
+              <div class="doctor-frame">
+                <img class="doc-img" src="lyn_photo.jpeg" alt="Porträt von Lyn Ayuk Anyi" />
+              </div>
             </div>
 
             <div class="contact-hero">
@@ -782,23 +816,24 @@
             </div>
           </div>
 
-          <div class="opening-card">
-  <h3 class="opening-title" data-key="hours_title">Öffnungszeiten</h3>
+          <div id="zeiten" class="med-card">
+            <div class="opening-card">
+              <h3 class="opening-title" data-key="hours_title">Öffnungszeiten</h3>
 
-  <div class="opening-content">
-    <div class="opening-note" data-key="opening_note">Sprechstunden nach Vereinbarung</div>
+              <div class="opening-content">
+                <div class="opening-note" data-key="opening_note">Sprechstunden nach Vereinbarung</div>
 
-    <div class="opening-row">
-      <span class="day" data-key="opening_days_1">Mo - Fr</span>
-      <span class="time" data-key="opening_time_1">08:00 - 13:00</span>
-    </div>
+                <div class="opening-row">
+                  <span class="day" data-key="opening_days_1">Mo - Fr</span>
+                  <span class="time" data-key="opening_time_1">08:00 - 13:00</span>
+                </div>
 
-    <div class="opening-row">
-      <span class="day" data-key="opening_days_2">Mo, Di, Do</span>
-      <span class="time" data-key="opening_time_2">15:00 - 18:00</span>
-    </div>
-  </div>
-</div>
+                <div class="opening-row">
+                  <span class="day" data-key="opening_days_2">Mo, Di, Do</span>
+                  <span class="time" data-key="opening_time_2">15:00 - 18:00</span>
+                </div>
+              </div>
+            </div>
 
             <p style="margin-top: 0.9rem; font-size: 0.88rem; color: var(--text-soft);" data-key="hours_note">
               Termine außerhalb der regulären Zeiten nach individueller Vereinbarung.
@@ -836,7 +871,7 @@
           <div class="med-card">
             <h3 data-key="impressum_title">Impressum</h3>
             <p data-key="impressum_text">
-              Praxis Lyn Ayuk Anyi<br>
+              Praxis Frau Lyn Ayuk Anyi<br>
               Walter-Kolb-Straße 9-11<br>
               60594 Frankfurt am Main<br><br>
               Telefon: 069-625162 / 613515<br>
@@ -859,7 +894,7 @@
 
   <footer>
     <div class="container footer-flex">
-      <div>© 2026 Praxis Lyn Ayuk Anyi – Alle Rechte vorbehalten.</div>
+      <div>© 2026 Praxis Frau Lyn Ayuk Anyi – Alle Rechte vorbehalten.</div>
       <div class="footer-links">
         <a href="#impressum" data-key="footer_impressum">Impressum</a>
         <a href="#impressum" data-key="footer_privacy">Datenschutz</a>
@@ -882,7 +917,6 @@
         hero_line_2: "Fachärztin für Allgemeinmedizin",
         welcome_line_1: "Herzlich willkommen",
         welcome_line_2: "Unsere Leistungen (Privat und alle Krankenkassen)",
-        photo_placeholder: "Porträtfoto hier einfügen",
         hero_contact_title: "Verantwortungsvolle Medizin, persönlich und nah",
         phone_label: "Telefon:",
         fax_label: "Telefax:",
@@ -925,7 +959,7 @@
         location_text: "Hinweise zu ÖPNV, Parkmöglichkeiten und Barrierefreiheit können hier ergänzt werden.",
         legal_title: "Rechtliches & Datenschutz",
         impressum_title: "Impressum",
-        impressum_text: "Praxis Lyn Ayuk Anyi<br>Walter-Kolb-Straße 9-11<br>60594 Frankfurt am Main<br><br>Telefon: 069-625162 / 613515<br>Telefax: 069-60324532<br><br>Zuständige Kammer: Landesärztekammer Hessen<br>Berufsbezeichnung: Fachärztin für Allgemeinmedizin",
+        impressum_text: "Praxis Frau Lyn Ayuk Anyi<br>Walter-Kolb-Straße 9-11<br>60594 Frankfurt am Main<br><br>Telefon: 069-625162 / 613515<br>Telefax: 069-60324532<br><br>Zuständige Kammer: Landesärztekammer Hessen<br>Berufsbezeichnung: Fachärztin für Allgemeinmedizin",
         privacy_title: "Datenschutzerklärung",
         privacy_text: "Der Schutz personenbezogener Daten ist uns wichtig. Informationen zur Verarbeitung personenbezogener Daten, zu Kontaktaufnahmen und zu Ihren Rechten werden in der vollständigen Datenschutzerklärung erläutert.",
         footer_impressum: "Impressum",
@@ -939,12 +973,11 @@
         nav_contact: "Contact",
         nav_hours: "Hours",
         nav_location: "Directions",
-        nav_legal: "Legal",
+        nav_legal: "Legal Notice",
         hero_line_1: "Your primary care practice in Frankfurt am Main",
         hero_line_2: "Specialist in General Medicine",
         welcome_line_1: "A warm welcome",
         welcome_line_2: "Our services (private and all health insurance funds)",
-        photo_placeholder: "Insert portrait here",
         hero_contact_title: "Responsible medicine, personal and close to you",
         phone_label: "Phone:",
         fax_label: "Fax:",
@@ -987,7 +1020,7 @@
         location_text: "Public transport, parking and accessibility notes can be added here.",
         legal_title: "Legal & Privacy",
         impressum_title: "Legal Notice",
-        impressum_text: "Practice Lyn Ayuk Anyi<br>Walter-Kolb-Straße 9-11<br>60594 Frankfurt am Main<br><br>Phone: 069-625162 / 613515<br>Fax: 069-60324532<br><br>Responsible chamber: State Medical Association of Hesse<br>Professional title: Specialist in General Medicine",
+        impressum_text: "Practice Frau Lyn Ayuk Anyi<br>Walter-Kolb-Straße 9-11<br>60594 Frankfurt am Main<br><br>Phone: 069-625162 / 613515<br>Fax: 069-60324532<br><br>Responsible chamber: State Medical Association of Hesse<br>Professional title: Specialist in General Medicine",
         privacy_title: "Privacy Policy",
         privacy_text: "The protection of personal data is important to us. Information on the processing of personal data, contact requests and your rights is provided in the full privacy policy.",
         footer_impressum: "Legal Notice",
@@ -1006,7 +1039,6 @@
         hero_line_2: "Spécialiste en médecine générale",
         welcome_line_1: "Soyez les bienvenus",
         welcome_line_2: "Nos services (privé et toutes les caisses d'assurance maladie)",
-        photo_placeholder: "Insérer ici le portrait",
         hero_contact_title: "Une médecine responsable, personnelle et proche de vous",
         phone_label: "Téléphone :",
         fax_label: "Fax :",
@@ -1049,7 +1081,7 @@
         location_text: "Les informations sur les transports, le stationnement et l'accessibilité peuvent être ajoutées ici.",
         legal_title: "Mentions légales & confidentialité",
         impressum_title: "Mentions légales",
-        impressum_text: "Praxis Lyn Ayuk Anyi<br>Walter-Kolb-Straße 9-11<br>60594 Francfort-sur-le-Main<br><br>Téléphone : 069-625162 / 613515<br>Fax : 069-60324532<br><br>Ordre compétent : Chambre médicale de Hesse<br>Titre professionnel : Spécialiste en médecine générale",
+        impressum_text: "Praxis Frau Lyn Ayuk Anyi<br>Walter-Kolb-Straße 9-11<br>60594 Francfort-sur-le-Main<br><br>Téléphone : 069-625162 / 613515<br>Fax : 069-60324532<br><br>Ordre compétent : Chambre médicale de Hesse<br>Titre professionnel : Spécialiste en médecine générale",
         privacy_title: "Confidentialité",
         privacy_text: "La protection des données personnelles est importante pour nous. Des informations sur le traitement des données personnelles, les demandes de contact et vos droits sont fournies dans la politique de confidentialité complète.",
         footer_impressum: "Mentions légales",
