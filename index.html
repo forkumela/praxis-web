@@ -3,17 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
   <title>Praxis Lyn Ayuk Anyi | Fachärztin für Allgemeinmedizin | Frankfurt am Main</title>
+
   <meta
     name="description"
-    content="Praxis Lyn Ayuk Anyi in Frankfurt am Main. Fachärztin für Allgemeinmedizin – persönliche Betreuung, moderne hausärztliche Versorgung und Sprechstunden nach Vereinbarung."
+    content="Praxis Lyn Ayuk Anyi in Frankfurt am Main. Fachärztin für Allgemeinmedizin – persönliche Betreuung, moderne hausärztliche Versorgung, Vorsorgeuntersuchungen und Sprechstunden nach Vereinbarung."
   />
   <meta name="theme-color" content="#1b7e5c" />
-  <meta name="robots" content="index,follow" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="author" content="Praxis Lyn Ayuk Anyi" />
+
+  <link rel="canonical" href="https://www.praxis-lyn-ayuk-anyi.de/" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
   <meta property="og:title" content="Praxis Lyn Ayuk Anyi | Fachärztin für Allgemeinmedizin" />
-  <meta property="og:description" content="Persönliche hausärztliche Versorgung in Frankfurt am Main – strukturiert, patientennah und professionell." />
+  <meta property="og:description" content="Ihre Hausarztpraxis in Frankfurt am Main für Allgemeinmedizin, Vorsorgeuntersuchungen und persönliche medizinische Betreuung." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.praxis-lyn-ayuk-anyi.de/" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:site_name" content="Praxis Lyn Ayuk Anyi" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -522,6 +531,22 @@
       border-left: 4px solid var(--primary);
     }
 
+    .trust-card {
+      background: linear-gradient(135deg, #ffffff 0%, #eef9f4 100%);
+      border: 1px solid rgba(27, 126, 92, 0.18);
+    }
+
+    .trust-badge {
+      display: inline-flex;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 0.45rem 0.75rem;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.88rem;
+      margin-bottom: 1rem;
+    }
+
     .opening-card {
       background: var(--accent-card);
       border-radius: 18px;
@@ -585,6 +610,37 @@
     .map-text {
       padding: 1.2rem 1.5rem;
       color: var(--text-soft);
+    }
+
+    .seo-footer-text {
+      margin-top: 1.2rem;
+      max-width: 920px;
+      color: #d7e3e9;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 22px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.85rem;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+      z-index: 500;
+      transition: 0.2s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-3px) scale(1.03);
+      background: #1ebe5d;
     }
 
     footer {
@@ -798,8 +854,6 @@
         margin-bottom: 0.06rem;
       }
 
-      /* Critical premium mobile fix:
-         hide duplicate hero logo to eliminate dead space */
       .hero-logo-wrap {
         display: none;
       }
@@ -909,6 +963,14 @@
         padding: 1rem;
       }
 
+      .whatsapp-float {
+        right: 16px;
+        bottom: 16px;
+        width: 54px;
+        height: 54px;
+        font-size: 1.7rem;
+      }
+
       footer {
         padding: 1.5rem 0;
       }
@@ -921,6 +983,10 @@
       .footer-links a {
         margin: 0 0.55rem;
       }
+
+      .seo-footer-text {
+        text-align: center;
+      }
     }
   </style>
 
@@ -928,8 +994,11 @@
   {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
+    "@id": "https://www.praxis-lyn-ayuk-anyi.de/#medicalclinic",
     "name": "Praxis Lyn Ayuk Anyi",
+    "url": "https://www.praxis-lyn-ayuk-anyi.de/",
     "medicalSpecialty": "GeneralPractice",
+    "description": "Hausarztpraxis in Frankfurt am Main für Allgemeinmedizin, Vorsorgeuntersuchungen und individuelle medizinische Betreuung.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Walter-Kolb-Straße 9-11",
@@ -938,7 +1007,26 @@
       "addressCountry": "DE"
     },
     "telephone": "+49-69-625162",
-    "faxNumber": "+49-69-60324532"
+    "faxNumber": "+49-69-60324532",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "13:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Thursday"],
+        "opens": "15:00",
+        "closes": "18:00"
+      }
+    ],
+    "areaServed": {
+      "@type": "City",
+      "name": "Frankfurt am Main"
+    },
+    "availableLanguage": ["German", "English", "French"]
   }
   </script>
 </head>
@@ -963,14 +1051,7 @@
         </div>
       </div>
 
-      <button
-        class="menu-toggle"
-        id="menuToggle"
-        aria-label="Menü öffnen"
-        aria-expanded="false"
-        aria-controls="mainNav"
-        type="button"
-      >
+      <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mainNav" type="button">
         <span></span>
         <span></span>
         <span></span>
@@ -980,6 +1061,7 @@
         <a href="#start" data-key="nav_home">Start</a>
         <a href="#aerztin" data-key="nav_doctor">Ärztin</a>
         <a href="#leistungen" data-key="nav_services">Leistungen</a>
+        <a href="#vertrauen" data-key="nav_trust">Vertrauen</a>
         <a href="#kontakt" data-key="nav_contact">Kontakt</a>
         <a href="#zeiten" data-key="nav_hours">Sprechzeiten</a>
         <a href="#anfahrt" data-key="nav_location">Anfahrt</a>
@@ -1036,7 +1118,6 @@
         </div>
       </div>
     </section>
-
     <section id="aerztin" class="section">
       <div class="container">
         <h2 class="section-title" data-key="doctor_title">Ihre Ärztin</h2>
@@ -1065,6 +1146,36 @@
       </div>
     </section>
 
+    <!-- TRUST SECTION -->
+    <section id="vertrauen" class="section">
+      <div class="container">
+        <h2 class="section-title">Vertrauen & medizinische Qualität</h2>
+        <p class="section-sub">
+          Eine vertrauensvolle hausärztliche Betreuung basiert auf Erfahrung, klarer Kommunikation und medizinischer Sorgfalt.
+        </p>
+
+        <div class="grid-3">
+          <div class="med-card trust-card">
+            <div class="trust-badge">✓</div>
+            <h3>Fachärztliche Kompetenz</h3>
+            <p>Behandlung durch eine erfahrene Fachärztin für Allgemeinmedizin.</p>
+          </div>
+
+          <div class="med-card trust-card">
+            <div class="trust-badge">✓</div>
+            <h3>Mehrsprachige Betreuung</h3>
+            <p>Deutsch, Englisch und Französisch – verständliche Kommunikation für alle Patienten.</p>
+          </div>
+
+          <div class="med-card trust-card">
+            <div class="trust-badge">✓</div>
+            <h3>Zentrale Lage</h3>
+            <p>Gut erreichbare Praxis in Frankfurt mit persönlicher Terminbetreuung.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="leistungen" class="section">
       <div class="container">
         <h2 class="section-title" data-key="services_title">Leistungen</h2>
@@ -1074,29 +1185,29 @@
 
         <div class="grid-3">
           <div class="med-card">
-            <h3 data-key="service_1_title">Allgemeinmedizin</h3>
+            <h3>Allgemeinmedizin</h3>
             <ul class="service-list">
-              <li data-key="service_1_item_1">Akutsprechstunde und Erstdiagnostik</li>
-              <li data-key="service_1_item_2">Behandlung häufiger Erkrankungen</li>
-              <li data-key="service_1_item_3">Kontroll- und Verlaufstermine</li>
+              <li>Akutsprechstunde und Erstdiagnostik</li>
+              <li>Behandlung häufiger Erkrankungen</li>
+              <li>Kontroll- und Verlaufstermine</li>
             </ul>
           </div>
 
           <div class="med-card">
-            <h3 data-key="service_2_title">Vorsorge & Prävention</h3>
+            <h3>Vorsorge & Prävention</h3>
             <ul class="service-list">
-              <li data-key="service_2_item_1">Gesundheits-Check-ups</li>
-              <li data-key="service_2_item_2">Impfberatung und Impfungen</li>
-              <li data-key="service_2_item_3">Früherkennung und Risikoberatung</li>
+              <li>Gesundheits-Check-ups</li>
+              <li>Impfberatung und Impfungen</li>
+              <li>Früherkennung und Risikoberatung</li>
             </ul>
           </div>
 
           <div class="med-card">
-            <h3 data-key="service_3_title">Praxisservice</h3>
+            <h3>Praxisservice</h3>
             <ul class="service-list">
-              <li data-key="service_3_item_1">Terminvereinbarung</li>
-              <li data-key="service_3_item_2">Rezept- und Überweisungsmanagement</li>
-              <li data-key="service_3_item_3">Verlässliche Nachbetreuung</li>
+              <li>Terminvereinbarung</li>
+              <li>Rezept- und Überweisungsmanagement</li>
+              <li>Verlässliche Nachbetreuung</li>
             </ul>
           </div>
         </div>
@@ -1105,42 +1216,42 @@
 
     <section id="kontakt" class="section">
       <div class="container">
-        <h2 class="section-title" data-key="contact_title">Kontakt & Sprechzeiten</h2>
+        <h2 class="section-title">Kontakt & Sprechzeiten</h2>
 
         <div class="grid-2">
           <div class="med-card">
-            <h3 data-key="contact_card_title">Praxisadresse & Erreichbarkeit</h3>
+            <h3>Praxisadresse & Erreichbarkeit</h3>
             <ul class="info-list">
-              <li><strong data-key="address_label">Adresse:</strong> Walter-Kolb-Straße 9-11, 60594 Frankfurt am Main</li>
-              <li><strong data-key="phone_label">Telefon:</strong> <a href="tel:+4969625162">069-625162 / 613515</a></li>
-              <li><strong data-key="fax_label">Telefax:</strong> 069-60324532</li>
+              <li><strong>Adresse:</strong> Walter-Kolb-Straße 9-11, 60594 Frankfurt am Main</li>
+              <li><strong>Telefon:</strong> <a href="tel:+4969625162">069-625162 / 613515</a></li>
+              <li><strong>Telefax:</strong> 069-60324532</li>
             </ul>
 
-            <div class="notice-emergency" data-key="contact_notice">
+            <div class="notice-emergency">
               Bei lebensbedrohlichen Zuständen wählen Sie bitte 112. Für akute Beschwerden außerhalb der Sprechzeiten wenden Sie sich an den ärztlichen Bereitschaftsdienst unter 116117.
             </div>
           </div>
 
           <div id="zeiten" class="med-card">
             <div class="opening-card">
-              <h3 class="opening-title" data-key="hours_title">Öffnungszeiten</h3>
+              <h3 class="opening-title">Öffnungszeiten</h3>
 
               <div class="opening-content">
-                <div class="opening-note" data-key="opening_note">Sprechstunden nach Vereinbarung</div>
+                <div class="opening-note">Sprechstunden nach Vereinbarung</div>
 
                 <div class="opening-row">
-                  <span class="day" data-key="opening_days_1">Mo - Fr</span>
-                  <span class="time" data-key="opening_time_1">08:00 - 13:00</span>
+                  <span class="day">Mo - Fr</span>
+                  <span class="time">08:00 - 13:00</span>
                 </div>
 
                 <div class="opening-row">
-                  <span class="day" data-key="opening_days_2">Mo, Di, Do</span>
-                  <span class="time" data-key="opening_time_2">15:00 - 18:00</span>
+                  <span class="day">Mo, Di, Do</span>
+                  <span class="time">15:00 - 18:00</span>
                 </div>
               </div>
             </div>
 
-            <p style="margin-top: 0.9rem; font-size: 0.88rem; color: var(--text-soft);" data-key="hours_note">
+            <p style="margin-top: 0.9rem; font-size: 0.88rem; color: var(--text-soft);">
               Termine außerhalb der regulären Zeiten nach individueller Vereinbarung.
             </p>
           </div>
@@ -1150,19 +1261,14 @@
 
     <section id="anfahrt" class="section">
       <div class="container">
-        <h2 class="section-title" data-key="location_title">Anfahrt & Lage</h2>
+        <h2 class="section-title">Anfahrt & Lage</h2>
         <div class="map-wrapper">
-          <div class="map-text" data-key="location_text">
-            Hinweise zu ÖPNV, Parkmöglichkeiten und Barrierefreiheit können hier ergänzt werden.
-          </div>
           <iframe
-            title="Praxisstandort Frankfurt"
-            src="https://www.google.com/maps?q=Walter-Kolb-Stra%C3%9Fe+9-11,+60594+Frankfurt+am+Main&output=embed"
+            src="https://www.google.com/maps?q=Walter-Kolb-Straße+9-11,+Frankfurt&output=embed"
             width="100%"
             height="340"
-            style="border:0; display:block;"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
+            style="border:0;"
+            loading="lazy">
           </iframe>
         </div>
       </div>
@@ -1170,26 +1276,25 @@
 
     <section id="impressum" class="section">
       <div class="container">
-        <h2 class="section-title" data-key="legal_title">Rechtliches & Datenschutz</h2>
+        <h2 class="section-title">Impressum</h2>
 
         <div class="grid-2">
           <div class="med-card">
-            <h3 data-key="impressum_title">Impressum</h3>
-            <p data-key="impressum_text">
+            <p>
               Praxis Lyn Ayuk Anyi<br>
               Walter-Kolb-Straße 9-11<br>
               60594 Frankfurt am Main<br><br>
               Telefon: 069-625162 / 613515<br>
               Telefax: 069-60324532<br><br>
-              Zuständige Kammer: Landesärztekammer Hessen<br>
-              Berufsbezeichnung: Fachärztin für Allgemeinmedizin
+              Landesärztekammer Hessen<br>
+              Fachärztin für Allgemeinmedizin
             </p>
           </div>
 
           <div class="med-card">
-            <h3 data-key="privacy_title">Datenschutzerklärung</h3>
-            <p data-key="privacy_text">
-              Der Schutz personenbezogener Daten ist uns wichtig. Informationen zur Verarbeitung personenbezogener Daten, zu Kontaktaufnahmen und zu Ihren Rechten werden in der vollständigen Datenschutzerklärung erläutert.
+            <h3>Datenschutz</h3>
+            <p>
+              Der Schutz Ihrer Daten ist uns wichtig. Weitere Informationen finden Sie in der Datenschutzerklärung.
             </p>
           </div>
         </div>
@@ -1201,255 +1306,22 @@
     <div class="container footer-flex">
       <div>© 2026 Praxis Lyn Ayuk Anyi – Alle Rechte vorbehalten.</div>
       <div class="footer-links">
-        <a href="#impressum" data-key="footer_impressum">Impressum</a>
-        <a href="#impressum" data-key="footer_privacy">Datenschutz</a>
+        <a href="#impressum">Impressum</a>
+        <a href="#impressum">Datenschutz</a>
       </div>
     </div>
+
+    <p class="seo-footer-text">
+      Ihre Hausarztpraxis in Frankfurt am Main für Allgemeinmedizin, Vorsorgeuntersuchungen und individuelle Betreuung.
+      Wir bieten schnelle Termine und behandeln Patienten auf Deutsch, Englisch und Französisch.
+    </p>
   </footer>
 
-  <script>
-    const translations = {
-      de: {
-        brand_subtitle: "Fachärztin für Allgemeinmedizin",
-        nav_home: "Start",
-        nav_doctor: "Ärztin",
-        nav_services: "Leistungen",
-        nav_contact: "Kontakt",
-        nav_hours: "Sprechzeiten",
-        nav_location: "Anfahrt",
-        nav_legal: "Impressum",
-        hero_line_1: "Ihre Hausarztpraxis in Frankfurt am Main",
-        hero_line_2: "Fachärztin für Allgemeinmedizin",
-        welcome_line_1: "Herzlich willkommen",
-        welcome_line_2: "Unsere Leistungen (Privat und alle Krankenkassen)",
-        hero_contact_title: "Verantwortungsvolle Medizin, persönlich und nah",
-        phone_label: "Telefon:",
-        fax_label: "Telefax:",
-        hero_btn_contact: "Kontakt",
-        hero_btn_hours: "Öffnungszeiten",
-        doctor_title: "Ihre Ärztin",
-        doctor_intro: "Persönliche Allgemeinmedizin – von der Akutversorgung bis zur langfristigen Begleitung.",
-        doctor_text: "Fachärztin für Allgemeinmedizin mit Fokus auf strukturierte Diagnostik, patientennahe Betreuung und verständliche medizinische Beratung.",
-        doctor_focus_title: "Schwerpunkte",
-        doctor_focus_1: "Allgemeinmedizinische Beratung und Behandlung",
-        doctor_focus_2: "Gesundheitsvorsorge und Check-up",
-        doctor_focus_3: "Prävention häufiger Herz-Kreislauf- und Stoffwechselrisiken",
-        doctor_focus_4: "Patientenzentrierte und ruhige Gesprächsführung",
-        services_title: "Leistungen",
-        services_intro: "Moderne hausärztliche Versorgung nach aktuellem Qualitätsstandard.",
-        service_1_title: "Allgemeinmedizin",
-        service_1_item_1: "Akutsprechstunde und Erstdiagnostik",
-        service_1_item_2: "Behandlung häufiger Erkrankungen",
-        service_1_item_3: "Kontroll- und Verlaufstermine",
-        service_2_title: "Vorsorge & Prävention",
-        service_2_item_1: "Gesundheits-Check-ups",
-        service_2_item_2: "Impfberatung und Impfungen",
-        service_2_item_3: "Früherkennung und Risikoberatung",
-        service_3_title: "Praxisservice",
-        service_3_item_1: "Terminvereinbarung",
-        service_3_item_2: "Rezept- und Überweisungsmanagement",
-        service_3_item_3: "Verlässliche Nachbetreuung",
-        contact_title: "Kontakt & Sprechzeiten",
-        contact_card_title: "Praxisadresse & Erreichbarkeit",
-        address_label: "Adresse:",
-        contact_notice: "Bei lebensbedrohlichen Zuständen wählen Sie bitte 112. Für akute Beschwerden außerhalb der Sprechzeiten wenden Sie sich an den ärztlichen Bereitschaftsdienst unter 116117.",
-        hours_title: "Öffnungszeiten",
-        opening_note: "Sprechstunden nach Vereinbarung",
-        opening_days_1: "Mo - Fr",
-        opening_time_1: "08:00 - 13:00",
-        opening_days_2: "Mo, Di, Do",
-        opening_time_2: "15:00 - 18:00",
-        hours_note: "Termine außerhalb der regulären Zeiten nach individueller Vereinbarung.",
-        location_title: "Anfahrt & Lage",
-        location_text: "Hinweise zu ÖPNV, Parkmöglichkeiten und Barrierefreiheit können hier ergänzt werden.",
-        legal_title: "Rechtliches & Datenschutz",
-        impressum_title: "Impressum",
-        impressum_text: "Praxis Lyn Ayuk Anyi<br>Walter-Kolb-Straße 9-11<br>60594 Frankfurt am Main<br><br>Telefon: 069-625162 / 613515<br>Telefax: 069-60324532<br><br>Zuständige Kammer: Landesärztekammer Hessen<br>Berufsbezeichnung: Fachärztin für Allgemeinmedizin",
-        privacy_title: "Datenschutzerklärung",
-        privacy_text: "Der Schutz personenbezogener Daten ist uns wichtig. Informationen zur Verarbeitung personenbezogener Daten, zu Kontaktaufnahmen und zu Ihren Rechten werden in der vollständigen Datenschutzerklärung erläutert.",
-        footer_impressum: "Impressum",
-        footer_privacy: "Datenschutz"
-      },
-      en: {
-        brand_subtitle: "Specialist in General Medicine",
-        nav_home: "Home",
-        nav_doctor: "Doctor",
-        nav_services: "Services",
-        nav_contact: "Contact",
-        nav_hours: "Hours",
-        nav_location: "Directions",
-        nav_legal: "Legal Notice",
-        hero_line_1: "Your primary care practice in Frankfurt am Main",
-        hero_line_2: "Specialist in General Medicine",
-        welcome_line_1: "A warm welcome",
-        welcome_line_2: "Our services (private and all health insurance funds)",
-        hero_contact_title: "Responsible medicine, personal and close to you",
-        phone_label: "Phone:",
-        fax_label: "Fax:",
-        hero_btn_contact: "Contact",
-        hero_btn_hours: "Opening Hours",
-        doctor_title: "Your Doctor",
-        doctor_intro: "Personal general medicine – from acute care to long-term support.",
-        doctor_text: "Specialist in General Medicine focused on structured diagnostics, patient-centered care and clear medical guidance.",
-        doctor_focus_title: "Focus Areas",
-        doctor_focus_1: "General medical consultation and treatment",
-        doctor_focus_2: "Preventive care and check-up",
-        doctor_focus_3: "Prevention of common cardiovascular and metabolic risks",
-        doctor_focus_4: "Patient-centered and calm communication",
-        services_title: "Services",
-        services_intro: "Modern primary care according to current quality standards.",
-        service_1_title: "General Medicine",
-        service_1_item_1: "Acute consultation and initial diagnosis",
-        service_1_item_2: "Treatment of common illnesses",
-        service_1_item_3: "Follow-up appointments",
-        service_2_title: "Prevention",
-        service_2_item_1: "Health check-ups",
-        service_2_item_2: "Vaccination advice and vaccinations",
-        service_2_item_3: "Early detection and risk counselling",
-        service_3_title: "Practice Services",
-        service_3_item_1: "Appointments",
-        service_3_item_2: "Prescription and referral management",
-        service_3_item_3: "Reliable follow-up care",
-        contact_title: "Contact & Opening Hours",
-        contact_card_title: "Practice Address & Contact",
-        address_label: "Address:",
-        contact_notice: "In life-threatening emergencies, please call 112. For urgent complaints outside opening hours, contact the medical on-call service at 116117.",
-        hours_title: "Opening Hours",
-        opening_note: "Consultations by appointment",
-        opening_days_1: "Mon - Fri",
-        opening_time_1: "08:00 - 13:00",
-        opening_days_2: "Mon, Tue, Thu",
-        opening_time_2: "15:00 - 18:00",
-        hours_note: "Appointments outside regular hours by individual arrangement.",
-        location_title: "Location & Directions",
-        location_text: "Public transport, parking and accessibility notes can be added here.",
-        legal_title: "Legal & Privacy",
-        impressum_title: "Legal Notice",
-        impressum_text: "Practice Lyn Ayuk Anyi<br>Walter-Kolb-Straße 9-11<br>60594 Frankfurt am Main<br><br>Phone: 069-625162 / 613515<br>Fax: 069-60324532<br><br>Responsible chamber: State Medical Association of Hesse<br>Professional title: Specialist in General Medicine",
-        privacy_title: "Privacy Policy",
-        privacy_text: "The protection of personal data is important to us. Information on the processing of personal data, contact requests and your rights is provided in the full privacy policy.",
-        footer_impressum: "Legal Notice",
-        footer_privacy: "Privacy Policy"
-      },
-      fr: {
-        brand_subtitle: "Spécialiste en médecine générale",
-        nav_home: "Accueil",
-        nav_doctor: "Médecin",
-        nav_services: "Services",
-        nav_contact: "Contact",
-        nav_hours: "Horaires",
-        nav_location: "Accès",
-        nav_legal: "Mentions légales",
-        hero_line_1: "Votre cabinet de médecine générale à Francfort-sur-le-Main",
-        hero_line_2: "Spécialiste en médecine générale",
-        welcome_line_1: "Soyez les bienvenus",
-        welcome_line_2: "Nos services (privé et toutes les caisses d'assurance maladie)",
-        hero_contact_title: "Une médecine responsable, personnelle et proche de vous",
-        phone_label: "Téléphone :",
-        fax_label: "Fax :",
-        hero_btn_contact: "Contact",
-        hero_btn_hours: "Horaires",
-        doctor_title: "Votre médecin",
-        doctor_intro: "Médecine générale personnalisée – des soins aigus à l'accompagnement de long terme.",
-        doctor_text: "Spécialiste en médecine générale, axée sur un diagnostic structuré, un suivi proche du patient et un conseil médical clair.",
-        doctor_focus_title: "Domaines clés",
-        doctor_focus_1: "Consultation et traitement en médecine générale",
-        doctor_focus_2: "Prévention et bilan de santé",
-        doctor_focus_3: "Prévention des risques cardiovasculaires et métaboliques fréquents",
-        doctor_focus_4: "Communication calme et centrée sur le patient",
-        services_title: "Services",
-        services_intro: "Médecine de premier recours moderne selon les standards de qualité actuels.",
-        service_1_title: "Médecine générale",
-        service_1_item_1: "Consultation aiguë et diagnostic initial",
-        service_1_item_2: "Traitement des maladies courantes",
-        service_1_item_3: "Consultations de suivi",
-        service_2_title: "Prévention",
-        service_2_item_1: "Bilans de santé",
-        service_2_item_2: "Conseil vaccinal et vaccinations",
-        service_2_item_3: "Dépistage précoce et conseil sur les risques",
-        service_3_title: "Services du cabinet",
-        service_3_item_1: "Prise de rendez-vous",
-        service_3_item_2: "Gestion des ordonnances et orientations",
-        service_3_item_3: "Suivi fiable",
-        contact_title: "Contact & horaires",
-        contact_card_title: "Adresse du cabinet & contact",
-        address_label: "Adresse :",
-        contact_notice: "En cas d'urgence vitale, veuillez appeler le 112. Pour des plaintes urgentes hors horaires, contactez le service médical de garde au 116117.",
-        hours_title: "Horaires",
-        opening_note: "Consultations sur rendez-vous",
-        opening_days_1: "Lun - Ven",
-        opening_time_1: "08:00 - 13:00",
-        opening_days_2: "Lun, Mar, Jeu",
-        opening_time_2: "15:00 - 18:00",
-        hours_note: "Rendez-vous hors horaires habituels sur accord individuel.",
-        location_title: "Accès & localisation",
-        location_text: "Les informations sur les transports, le stationnement et l'accessibilité peuvent être ajoutées ici.",
-        legal_title: "Mentions légales & confidentialité",
-        impressum_title: "Mentions légales",
-        impressum_text: "Praxis Lyn Ayuk Anyi<br>Walter-Kolb-Straße 9-11<br>60594 Francfort-sur-le-Main<br><br>Téléphone : 069-625162 / 613515<br>Fax : 069-60324532<br><br>Ordre compétent : Chambre médicale de Hesse<br>Titre professionnel : Spécialiste en médecine générale",
-        privacy_title: "Confidentialité",
-        privacy_text: "La protection des données personnelles est importante pour nous. Des informations sur les données personnelles, les demandes de contact et vos droits sont fournies dans la politique de confidentialité complète.",
-        footer_impressum: "Mentions légales",
-        footer_privacy: "Confidentialité"
-      }
-    };
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/49163397454" class="whatsapp-float" target="_blank" title="WhatsApp Kontakt">
+    💬
+  </a>
 
-    function setLanguage(lang) {
-      const t = translations[lang];
-      if (!t) return;
-
-      document.documentElement.lang = lang;
-
-      document.querySelectorAll("[data-key]").forEach((el) => {
-        const key = el.getAttribute("data-key");
-        if (!t[key]) return;
-
-        if (key === "impressum_text" || key === "privacy_text") {
-          el.innerHTML = t[key];
-        } else {
-          el.textContent = t[key];
-        }
-      });
-
-      document.querySelectorAll(".lang-btn").forEach((btn) => {
-        btn.classList.toggle("active", btn.dataset.lang === lang);
-      });
-    }
-
-    const menuToggle = document.getElementById("menuToggle");
-    const mainNav = document.getElementById("mainNav");
-
-    if (menuToggle && mainNav) {
-      menuToggle.addEventListener("click", () => {
-        const isOpen = mainNav.classList.toggle("open");
-        menuToggle.classList.toggle("active", isOpen);
-        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      });
-
-      mainNav.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          if (window.innerWidth <= 920) {
-            mainNav.classList.remove("open");
-            menuToggle.classList.remove("active");
-            menuToggle.setAttribute("aria-expanded", "false");
-          }
-        });
-      });
-    }
-
-    document.querySelectorAll(".lang-btn").forEach((btn) => {
-      btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
-    });
-
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 920 && mainNav && menuToggle) {
-        mainNav.classList.remove("open");
-        menuToggle.classList.remove("active");
-        menuToggle.setAttribute("aria-expanded", "false");
-      }
-    });
-
-    setLanguage("de");
-  </script>
 </body>
+</html>
 </html>
