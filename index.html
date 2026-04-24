@@ -71,7 +71,53 @@
       color: var(--text);
       line-height: 1.6;
     }
+    /* === FIX FOOTER OVERLAP WITH WHATSAPP === */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  color: white;
+  border-radius: 50%;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  z-index: 999;
+  text-decoration: none;
+}
 
+/* KEY FIX: give footer breathing space */
+footer {
+  padding-bottom: 120px; /* prevents overlap */
+}
+
+/* Make footer text behave properly */
+.seo-footer-text {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #d7e3e9;
+  max-width: 900px;
+}
+
+/* Mobile optimization */
+@media (max-width: 560px) {
+  .whatsapp-float {
+    width: 52px;
+    height: 52px;
+    bottom: 20px;
+    right: 16px;
+    font-size: 24px;
+  }
+
+  footer {
+    padding-bottom: 140px; /* extra space for mobile */
+  }
+}
     img {
       display: block;
       max-width: 100%;
