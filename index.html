@@ -690,10 +690,10 @@ footer {
     }
 
     footer {
-      background: var(--text);
-      color: #d7e3e9;
-      padding: 2rem 0;
-      margin-top: 1rem;
+     background: var(--text);
+     color: #d7e3e9;
+     padding: 2rem 0 120px;
+     margin-top: 1rem;
     }
 
     .footer-flex {
@@ -1017,9 +1017,9 @@ footer {
         font-size: 1.7rem;
       }
 
-      footer {
-        padding: 1.5rem 0;
-      }
+     .footer {
+      padding: 1.5rem 0 140px;
+     }
 
       .footer-flex {
         flex-direction: column;
@@ -1376,34 +1376,153 @@ footer {
   </a>
 
   <script>
-    const menuToggle = document.getElementById("menuToggle");
-    const mainNav = document.getElementById("mainNav");
+  const translations = {
+    de: {
+      brand_subtitle: "Fachärztin für Allgemeinmedizin",
+      nav_home: "Start",
+      nav_doctor: "Ärztin",
+      nav_services: "Leistungen",
+      nav_trust: "Vertrauen",
+      nav_contact: "Kontakt",
+      nav_hours: "Sprechzeiten",
+      nav_location: "Anfahrt",
+      nav_legal: "Impressum",
+      hero_line_1: "Ihre Hausarztpraxis in Frankfurt am Main",
+      hero_line_2: "Fachärztin für Allgemeinmedizin",
+      welcome_line_1: "Herzlich willkommen",
+      welcome_line_2: "Unsere Leistungen (Privat und alle Krankenkassen)",
+      hero_contact_title: "Verantwortungsvolle Medizin, persönlich und nah",
+      hero_btn_contact: "Kontakt",
+      hero_btn_hours: "Öffnungszeiten",
+      doctor_title: "Ihre Ärztin",
+      doctor_intro: "Persönliche Allgemeinmedizin – von der Akutversorgung bis zur langfristigen Begleitung.",
+      doctor_text: "Fachärztin für Allgemeinmedizin mit Fokus auf strukturierte Diagnostik, patientennahe Betreuung und verständliche medizinische Beratung.",
+      doctor_focus_title: "Schwerpunkte",
+      doctor_focus_1: "Allgemeinmedizinische Beratung und Behandlung",
+      doctor_focus_2: "Gesundheitsvorsorge und Check-up",
+      doctor_focus_3: "Prävention häufiger Herz-Kreislauf- und Stoffwechselrisiken",
+      doctor_focus_4: "Patientenzentrierte und ruhige Gesprächsführung",
+      services_title: "Leistungen",
+      services_intro: "Moderne hausärztliche Versorgung nach aktuellem Qualitätsstandard.",
+      phone_label: "Telefon:",
+      fax_label: "Telefax:"
+    },
+    en: {
+      brand_subtitle: "Specialist in General Medicine",
+      nav_home: "Home",
+      nav_doctor: "Doctor",
+      nav_services: "Services",
+      nav_trust: "Trust",
+      nav_contact: "Contact",
+      nav_hours: "Opening Hours",
+      nav_location: "Directions",
+      nav_legal: "Legal Notice",
+      hero_line_1: "Your primary care practice in Frankfurt am Main",
+      hero_line_2: "Specialist in General Medicine",
+      welcome_line_1: "Welcome",
+      welcome_line_2: "Our services — private and statutory health insurance",
+      hero_contact_title: "Responsible medicine, personal and close to you",
+      hero_btn_contact: "Contact",
+      hero_btn_hours: "Opening Hours",
+      doctor_title: "Your Doctor",
+      doctor_intro: "Personal general medicine — from acute care to long-term support.",
+      doctor_text: "Specialist in General Medicine focused on structured diagnostics, patient-centered care and clear medical advice.",
+      doctor_focus_title: "Focus Areas",
+      doctor_focus_1: "General medical consultation and treatment",
+      doctor_focus_2: "Preventive healthcare and check-ups",
+      doctor_focus_3: "Prevention of common cardiovascular and metabolic risks",
+      doctor_focus_4: "Patient-centered and calm communication",
+      services_title: "Services",
+      services_intro: "Modern primary care according to current quality standards.",
+      phone_label: "Phone:",
+      fax_label: "Fax:"
+    },
+    fr: {
+      brand_subtitle: "Spécialiste en médecine générale",
+      nav_home: "Accueil",
+      nav_doctor: "Médecin",
+      nav_services: "Services",
+      nav_trust: "Confiance",
+      nav_contact: "Contact",
+      nav_hours: "Horaires",
+      nav_location: "Accès",
+      nav_legal: "Mentions légales",
+      hero_line_1: "Votre cabinet de médecine générale à Francfort-sur-le-Main",
+      hero_line_2: "Spécialiste en médecine générale",
+      welcome_line_1: "Bienvenue",
+      welcome_line_2: "Nos services — privé et caisses d’assurance maladie",
+      hero_contact_title: "Une médecine responsable, personnelle et proche de vous",
+      hero_btn_contact: "Contact",
+      hero_btn_hours: "Horaires",
+      doctor_title: "Votre médecin",
+      doctor_intro: "Médecine générale personnalisée — des soins aigus à l’accompagnement de long terme.",
+      doctor_text: "Spécialiste en médecine générale, axée sur un diagnostic structuré, une prise en charge proche du patient et des conseils médicaux clairs.",
+      doctor_focus_title: "Domaines clés",
+      doctor_focus_1: "Consultation et traitement en médecine générale",
+      doctor_focus_2: "Prévention et bilans de santé",
+      doctor_focus_3: "Prévention des risques cardiovasculaires et métaboliques fréquents",
+      doctor_focus_4: "Communication calme et centrée sur le patient",
+      services_title: "Services",
+      services_intro: "Médecine de premier recours moderne selon les standards de qualité actuels.",
+      phone_label: "Téléphone :",
+      fax_label: "Fax :"
+    }
+  };
 
-    if (menuToggle && mainNav) {
-      menuToggle.addEventListener("click", function () {
-        const isOpen = mainNav.classList.toggle("open");
-        menuToggle.classList.toggle("active", isOpen);
-        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      });
+  function setLanguage(lang) {
+    const t = translations[lang];
+    if (!t) return;
 
-      mainNav.querySelectorAll("a").forEach(function (link) {
-        link.addEventListener("click", function () {
-          if (window.innerWidth <= 920) {
-            mainNav.classList.remove("open");
-            menuToggle.classList.remove("active");
-            menuToggle.setAttribute("aria-expanded", "false");
-          }
-        });
-      });
+    document.documentElement.lang = lang;
 
-      window.addEventListener("resize", function () {
-        if (window.innerWidth > 920) {
+    document.querySelectorAll("[data-key]").forEach(function (el) {
+      const key = el.getAttribute("data-key");
+      if (t[key]) {
+        el.textContent = t[key];
+      }
+    });
+
+    document.querySelectorAll(".lang-btn").forEach(function (btn) {
+      btn.classList.toggle("active", btn.dataset.lang === lang);
+    });
+  }
+
+  document.querySelectorAll(".lang-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      setLanguage(btn.dataset.lang);
+    });
+  });
+
+  const menuToggle = document.getElementById("menuToggle");
+  const mainNav = document.getElementById("mainNav");
+
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener("click", function () {
+      const isOpen = mainNav.classList.toggle("open");
+      menuToggle.classList.toggle("active", isOpen);
+      menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    mainNav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        if (window.innerWidth <= 920) {
           mainNav.classList.remove("open");
           menuToggle.classList.remove("active");
           menuToggle.setAttribute("aria-expanded", "false");
         }
       });
-    }
-  </script>
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 920) {
+        mainNav.classList.remove("open");
+        menuToggle.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+  setLanguage("de");
+</script>
 </body>
 </html>
