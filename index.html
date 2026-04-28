@@ -538,33 +538,91 @@
       border: 1px solid rgba(27, 126, 92, 0.18);
     }
 
-    .service-row {
+    .service-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  background: var(--primary-soft);
+  padding: 0.85rem 0.9rem;
+  border-radius: 18px;
+  border-left: 4px solid var(--primary);
+}
+
+.service-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--primary-soft);
-  padding: 0.75rem 1rem;
-  border-radius: 16px;
-  border-left: 4px solid var(--primary);
-  font-weight: 600;
+  gap: 0.85rem;
+  width: 100%;
+}
+
+.service-row span {
+  font-size: 0.95rem;
+  line-height: 1.35;
+  font-weight: 700;
+  color: var(--text);
+  flex: 1;
+}
+
+.service-helper {
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: #5c8f7a;
+  font-weight: 500;
+}
+
+.service-trust {
+  font-size: 0.76rem;
+  line-height: 1.35;
+  color: #7a8f88;
 }
 
 .wa-inline {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  min-width: 42px;
+  height: 42px;
+  min-height: 42px;
   border-radius: 50%;
   background: #25d366;
-  color: white;
+  color: #ffffff;
   transition: 0.2s ease;
+  flex-shrink: 0;
+}
+
+.wa-inline svg {
+  width: 21px;
+  height: 21px;
+  display: block;
 }
 
 .wa-inline:hover {
   background: #1ebe5d;
   transform: scale(1.08);
 }
+
+@media (max-width: 560px) {
+  .service-row span {
+    font-size: 0.88rem;
+  }
+
+  .service-helper {
+    font-size: 0.74rem;
+  }
+
+  .service-trust {
+    font-size: 0.72rem;
+  }
+
+  .wa-inline {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    min-height: 40px;
+  }
+    }
     
     .trust-badge {
       display: inline-flex;
@@ -1235,41 +1293,31 @@
           <div class="med-card">
             <h3 data-key="service_3_title">Praxisservice</h3>
             <ul class="service-list">
-             <li style="flex-direction: column; align-items: flex-start; gap:6px;">
-
-  <!-- MAIN ROW -->
-  <div class="service-row" style="width:100%;">
-    <span>Termin einfach über das WhatsApp-Symbol anfragen</span>
+<li class="service-cta">
+  <div class="service-row">
+    <span data-key="whatsapp_cta_title">Termin einfach über das WhatsApp-Symbol anfragen</span>
 
     <a
-      href="https://wa.me/491633974548?text=F%C3%BCr%20Terminanfrage%20nennen%20Sie%20bitte%20Ihre%20Namen%2C%20den%20Grund%20f%C3%BCr%20den%20Termin%20und%20Ihre%20Telefonnummer.%0A%0AWir%20melden%20uns%20bei%20Ihnen%20zur%C3%BCck.%0A%0AIhr%20Praxis%20Lyn%20Ayuk%20Anyi"
+      href="https://wa.me/491633974548"
       target="_blank"
       rel="noopener noreferrer"
-      class="wa-inline"
-      aria-label="Termin anfragen über WhatsApp"
-      title="Termin anfragen (WhatsApp)"
+      class="wa-link wa-inline"
+      aria-label="WhatsApp Terminanfrage"
+      title="WhatsApp Terminanfrage"
     >
-      <svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor">
+      <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
         <path d="M16 3C9.4 3 4 8.3 4 14.8c0 2.6.9 5.1 2.5 7.1L4 29l7.3-2.4c1.9 1 4 1.6 6.2 1.6 6.6 0 12-5.3 12-11.8S22.6 3 16 3zm0 21.4c-2 0-3.9-.5-5.6-1.5l-.4-.2-4.3 1.4 1.4-4.2-.3-.4c-1.2-1.7-1.8-3.6-1.8-5.6 0-5.5 4.6-10 10.2-10s10.2 4.5 10.2 10-4.6 10-10.2 10zm5.6-7.6c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.7.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.5-.1 1.8-.7 2.1-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/>
       </svg>
     </a>
   </div>
 
-  <!-- INSTRUCTION -->
-  <small style="color:#5c8f7a; font-weight:500;">
-    Bitte klicken Sie auf das Symbol → Nachricht senden → wir melden uns zeitnah zurück
-  </small>
+<small class="service-helper" data-key="whatsapp_cta_helper">
+  Bitte klicken Sie auf das Symbol → Nachricht senden → wir melden uns zeitnah zurück
+</small>
 
-  <!-- TRUST -->
-  <small style="color:#7a8f88;">
-    Rückmeldung während der Sprechzeiten
-  </small>
-
-</li>
-    <svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor">
-      <path d="M16 3C9.4 3 4 8.3 4 14.8c0 2.6.9 5.1 2.5 7.1L4 29l7.3-2.4c1.9 1 4 1.6 6.2 1.6 6.6 0 12-5.3 12-11.8S22.6 3 16 3zm0 21.4c-2 0-3.9-.5-5.6-1.5l-.4-.2-4.3 1.4 1.4-4.2-.3-.4c-1.2-1.7-1.8-3.6-1.8-5.6 0-5.5 4.6-10 10.2-10s10.2 4.5 10.2 10-4.6 10-10.2 10zm5.6-7.6c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.7.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.5-.1 1.8-.7 2.1-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/>
-    </svg>
-  </a>
+  <small class="service-trust" data-key="whatsapp_cta_trust">
+  Rückmeldung während der Sprechzeiten
+</small>
 </li>
               <li data-key="service_3_item_2">Rezept- und Überweisungsmanagement</li>
               <li data-key="service_3_item_3">Verlässliche Nachbetreuung</li>
@@ -1448,10 +1496,13 @@
       service_2_item_2: "Impfberatung und Impfungen",
       service_2_item_3: "Früherkennung und Risikoberatung",
       service_3_title: "Praxisservice",
-      service_3_item_1: "Terminvereinbarung",
-      service_3_item_2: "Rezept- und Überweisungsmanagement",
-      service_3_item_3: "Verlässliche Nachbetreuung",
-      contact_title: "Kontakt & Sprechzeiten",
+     service_3_item_1: "Terminvereinbarung",
+     service_3_item_2: "Rezept- und Überweisungsmanagement",
+     service_3_item_3: "Verlässliche Nachbetreuung",
+     whatsapp_cta_title: "Termin einfach über das WhatsApp-Symbol anfragen",
+     whatsapp_cta_helper: "Bitte klicken Sie auf das Symbol → Nachricht senden → wir melden uns zeitnah zurück",
+     whatsapp_cta_trust: "Rückmeldung während der Sprechzeiten",
+    contact_title: "Kontakt & Sprechzeiten",
       contact_card_title: "Praxisadresse & Erreichbarkeit",
       address_label: "Adresse:",
       contact_notice: "Bei lebensbedrohlichen Zuständen wählen Sie bitte 112. Für akute Beschwerden außerhalb der Sprechzeiten wenden Sie sich an den ärztlichen Bereitschaftsdienst unter 116117.",
@@ -1477,157 +1528,163 @@
       whatsapp_message: "Guten Tag, ich möchte einen Termin vereinbaren.\n\nName:\nGrund des Besuchs:\nTelefonnummer:\n\nFür Terminanfragen geben Sie bitte Ihren Namen, den Grund Ihres Besuchs sowie Ihre Telefonnummer an. Wir melden uns schnellstmöglich bei Ihnen zurück.\n\nIhre Praxis Lyn Ayuk Anyi"
     },
 
-    en: {
-      skip_link: "Skip to content",
-      brand_subtitle: "Specialist in General Medicine",
-      nav_home: "Home",
-      nav_doctor: "Doctor",
-      nav_services: "Services",
-      nav_trust: "Trust",
-      nav_contact: "Contact",
-      nav_hours: "Opening Hours",
-      nav_location: "Directions",
-      nav_legal: "Legal Notice",
-      hero_line_1: "Your primary care practice in Frankfurt am Main",
-      hero_line_2: "Specialist in General Medicine",
-      welcome_line_1: "Welcome",
-      welcome_line_2: "Our services for private patients and statutory health insurance patients",
-      hero_contact_title: "Responsible medicine, personal and close to you",
-      phone_label: "Phone:",
-      fax_label: "Fax:",
-      hero_btn_contact: "Contact",
-      hero_btn_hours: "Opening Hours",
-      doctor_title: "Your Doctor",
-      doctor_intro: "Personal general medicine – from acute care to long-term support.",
-      doctor_text: "Specialist in General Medicine with a focus on structured diagnostics, patient-centered care and clear medical advice.",
-      doctor_focus_title: "Focus Areas",
-      doctor_focus_1: "General medical consultation and treatment",
-      doctor_focus_2: "Preventive healthcare and check-ups",
-      doctor_focus_3: "Prevention of common cardiovascular and metabolic risks",
-      doctor_focus_4: "Patient-centered and calm communication",
-      trust_title: "Trust & Medical Quality",
-      trust_intro: "Reliable primary care is based on experience, clear communication and careful medical practice.",
-      trust_1_title: "Specialist Medical Expertise",
-      trust_1_text: "Treatment by an experienced specialist in general medicine.",
-      trust_2_title: "Multilingual Care",
-      trust_2_text: "German, English and French – clear communication for all patients.",
-      trust_3_title: "Central Location",
-      trust_3_text: "Conveniently located practice in Frankfurt with personal appointment support.",
-      services_title: "Services",
-      services_intro: "Modern primary care according to current quality standards.",
-      service_1_title: "General Medicine",
-      service_1_item_1: "Acute consultation and initial diagnosis",
-      service_1_item_2: "Treatment of common illnesses",
-      service_1_item_3: "Check-up and follow-up appointments",
-      service_2_title: "Prevention & Preventive Care",
-      service_2_item_1: "Health check-ups",
-      service_2_item_2: "Vaccination advice and vaccinations",
-      service_2_item_3: "Early detection and risk counselling",
-      service_3_title: "Practice Services",
-      service_3_item_1: "Appointment scheduling",
-      service_3_item_2: "Prescription and referral management",
-      service_3_item_3: "Reliable follow-up care",
-      contact_title: "Contact & Opening Hours",
-      contact_card_title: "Practice Address & Contact",
-      address_label: "Address:",
-      contact_notice: "In life-threatening emergencies, please call 112. For urgent medical complaints outside opening hours, contact the medical on-call service at 116117.",
-      hours_title: "Opening Hours",
-      opening_note: "Consultations by appointment",
-      opening_days_1: "Mon - Fri",
-      opening_time_1: "08:00 - 13:00",
-      opening_days_2: "Mon, Tue, Thu",
-      opening_time_2: "15:00 - 18:00",
-      hours_note: "Appointments outside regular opening hours by individual arrangement.",
-      location_title: "Directions & Location",
-      location_text: "The practice is centrally located in Frankfurt am Main and is easy to reach.",
-      legal_title: "Legal Notice & Privacy",
-      impressum_title: "Legal Notice",
-      impressum_text: "Practice Lyn Ayuk Anyi<br>Walter-Kolb-Straße 9-11<br>60594 Frankfurt am Main<br><br>Phone: 069-625162 / 613515<br>Fax: 069-60324532<br><br>Responsible chamber: State Medical Association of Hesse<br>Professional title: Specialist in General Medicine",
-      privacy_title: "Privacy Policy",
-      privacy_text: "Protecting your data is important to us. Further information can be found in the privacy policy.",
-      footer_rights: "© 2026 Practice Lyn Ayuk Anyi – All rights reserved.",
-      footer_impressum: "Legal Notice",
-      footer_privacy: "Privacy",
-      seo_footer_text: "Your primary care practice in Frankfurt am Main for general medicine, preventive check-ups and individual medical care. We offer timely appointments and treat patients in German, English and French.",
-      whatsapp_label: "WhatsApp appointment request",
-      whatsapp_message: "Hello, I would like to request an appointment.\n\nName:\nReason for visit:\nPhone number:\n\nFor appointment requests, please provide your name, the reason for your visit and your phone number. We will get back to you as soon as possible.\n\nYour Practice Lyn Ayuk Anyi"
-    },
+en: {
+  skip_link: "Skip to content",
+  brand_subtitle: "Specialist in General Medicine",
+  nav_home: "Home",
+  nav_doctor: "Doctor",
+  nav_services: "Services",
+  nav_trust: "Trust",
+  nav_contact: "Contact",
+  nav_hours: "Opening Hours",
+  nav_location: "Directions",
+  nav_legal: "Legal Notice",
+  hero_line_1: "Your primary care practice in Frankfurt am Main",
+  hero_line_2: "Specialist in General Medicine",
+  welcome_line_1: "Welcome",
+  welcome_line_2: "Our services for private patients and statutory health insurance patients",
+  hero_contact_title: "Responsible medicine, personal and close to you",
+  phone_label: "Phone:",
+  fax_label: "Fax:",
+  hero_btn_contact: "Contact",
+  hero_btn_hours: "Opening Hours",
+  doctor_title: "Your Doctor",
+  doctor_intro: "Personal general medicine – from acute care to long-term support.",
+  doctor_text: "Specialist in General Medicine with a focus on structured diagnostics, patient-centered care and clear medical advice.",
+  doctor_focus_title: "Focus Areas",
+  doctor_focus_1: "General medical consultation and treatment",
+  doctor_focus_2: "Preventive healthcare and check-ups",
+  doctor_focus_3: "Prevention of common cardiovascular and metabolic risks",
+  doctor_focus_4: "Patient-centered and calm communication",
+  trust_title: "Trust & Medical Quality",
+  trust_intro: "Reliable primary care is based on experience, clear communication and careful medical practice.",
+  trust_1_title: "Specialist Medical Expertise",
+  trust_1_text: "Treatment by an experienced specialist in general medicine.",
+  trust_2_title: "Multilingual Care",
+  trust_2_text: "German, English and French – clear communication for all patients.",
+  trust_3_title: "Central Location",
+  trust_3_text: "Conveniently located practice in Frankfurt with personal appointment support.",
+  services_title: "Services",
+  services_intro: "Modern primary care according to current quality standards.",
+  service_1_title: "General Medicine",
+  service_1_item_1: "Acute consultation and initial diagnosis",
+  service_1_item_2: "Treatment of common illnesses",
+  service_1_item_3: "Check-up and follow-up appointments",
+  service_2_title: "Prevention & Preventive Care",
+  service_2_item_1: "Health check-ups",
+  service_2_item_2: "Vaccination advice and vaccinations",
+  service_2_item_3: "Early detection and risk counselling",
+  service_3_title: "Practice Services",
+  service_3_item_1: "Appointment scheduling",
+  service_3_item_2: "Prescription and referral management",
+  service_3_item_3: "Reliable follow-up care",
+  whatsapp_cta_title: "Request an appointment using the WhatsApp icon",
+  whatsapp_cta_helper: "Please click the icon → send the message → we will get back to you shortly",
+  whatsapp_cta_trust: "Replies during opening hours",
+  contact_title: "Contact & Opening Hours",
+  contact_card_title: "Practice Address & Contact",
+  address_label: "Address:",
+  contact_notice: "In life-threatening emergencies, please call 112. For urgent medical complaints outside opening hours, contact the medical on-call service at 116117.",
+  hours_title: "Opening Hours",
+  opening_note: "Consultations by appointment",
+  opening_days_1: "Mon - Fri",
+  opening_time_1: "08:00 - 13:00",
+  opening_days_2: "Mon, Tue, Thu",
+  opening_time_2: "15:00 - 18:00",
+  hours_note: "Appointments outside regular opening hours by individual arrangement.",
+  location_title: "Directions & Location",
+  location_text: "The practice is centrally located in Frankfurt am Main and is easy to reach.",
+  legal_title: "Legal Notice & Privacy",
+  impressum_title: "Legal Notice",
+  impressum_text: "Practice Lyn Ayuk Anyi<br>Walter-Kolb-Straße 9-11<br>60594 Frankfurt am Main<br><br>Phone: 069-625162 / 613515<br>Fax: 069-60324532<br><br>Responsible chamber: State Medical Association of Hesse<br>Professional title: Specialist in General Medicine",
+  privacy_title: "Privacy Policy",
+  privacy_text: "Protecting your data is important to us. Further information can be found in the privacy policy.",
+  footer_rights: "© 2026 Practice Lyn Ayuk Anyi – All rights reserved.",
+  footer_impressum: "Legal Notice",
+  footer_privacy: "Privacy",
+  seo_footer_text: "Your primary care practice in Frankfurt am Main for general medicine, preventive check-ups and individual medical care. We offer timely appointments and treat patients in German, English and French.",
+  whatsapp_label: "WhatsApp appointment request",
+  whatsapp_message: "Hello, I would like to request an appointment.\n\nName:\nReason for visit:\nPhone number:\n\nFor appointment requests, please provide your name, the reason for your visit and your phone number. We will get back to you as soon as possible.\n\nYour Praxis Lyn Ayuk Anyi"
+},
 
-    fr: {
-      skip_link: "Aller au contenu",
-      brand_subtitle: "Spécialiste en médecine générale",
-      nav_home: "Accueil",
-      nav_doctor: "Médecin",
-      nav_services: "Services",
-      nav_trust: "Confiance",
-      nav_contact: "Contact",
-      nav_hours: "Horaires",
-      nav_location: "Accès",
-      nav_legal: "Mentions légales",
-      hero_line_1: "Votre cabinet de médecine générale à Francfort-sur-le-Main",
-      hero_line_2: "Spécialiste en médecine générale",
-      welcome_line_1: "Bienvenue",
-      welcome_line_2: "Nos services pour patients privés et assurés par les caisses d’assurance maladie",
-      hero_contact_title: "Une médecine responsable, personnelle et proche de vous",
-      phone_label: "Téléphone :",
-      fax_label: "Fax :",
-      hero_btn_contact: "Contact",
-      hero_btn_hours: "Horaires",
-      doctor_title: "Votre médecin",
-      doctor_intro: "Médecine générale personnalisée – des soins aigus à l’accompagnement de long terme.",
-      doctor_text: "Spécialiste en médecine générale, avec un accent sur le diagnostic structuré, la prise en charge centrée sur le patient et des conseils médicaux clairs.",
-      doctor_focus_title: "Domaines clés",
-      doctor_focus_1: "Consultation et traitement en médecine générale",
-      doctor_focus_2: "Prévention et bilans de santé",
-      doctor_focus_3: "Prévention des risques cardiovasculaires et métaboliques fréquents",
-      doctor_focus_4: "Communication calme et centrée sur le patient",
-      trust_title: "Confiance & qualité médicale",
-      trust_intro: "Une prise en charge de médecine générale fiable repose sur l’expérience, une communication claire et une pratique médicale rigoureuse.",
-      trust_1_title: "Compétence médicale spécialisée",
-      trust_1_text: "Traitement par une spécialiste expérimentée en médecine générale.",
-      trust_2_title: "Prise en charge multilingue",
-      trust_2_text: "Allemand, anglais et français – une communication claire pour tous les patients.",
-      trust_3_title: "Situation centrale",
-      trust_3_text: "Cabinet bien situé à Francfort avec accompagnement personnalisé pour les rendez-vous.",
-      services_title: "Services",
-      services_intro: "Médecine de premier recours moderne selon les standards de qualité actuels.",
-      service_1_title: "Médecine générale",
-      service_1_item_1: "Consultation aiguë et diagnostic initial",
-      service_1_item_2: "Traitement des maladies courantes",
-      service_1_item_3: "Rendez-vous de contrôle et de suivi",
-      service_2_title: "Prévention & soins préventifs",
-      service_2_item_1: "Bilans de santé",
-      service_2_item_2: "Conseil vaccinal et vaccinations",
-      service_2_item_3: "Dépistage précoce et conseil sur les risques",
-      service_3_title: "Services du cabinet",
-      service_3_item_1: "Prise de rendez-vous",
-      service_3_item_2: "Gestion des ordonnances et orientations",
-      service_3_item_3: "Suivi fiable",
-      contact_title: "Contact & horaires",
-      contact_card_title: "Adresse du cabinet & contact",
-      address_label: "Adresse :",
-      contact_notice: "En cas d’urgence vitale, veuillez appeler le 112. Pour des plaintes médicales urgentes hors horaires d’ouverture, contactez le service médical de garde au 116117.",
-      hours_title: "Horaires",
-      opening_note: "Consultations sur rendez-vous",
-      opening_days_1: "Lun - Ven",
-      opening_time_1: "08:00 - 13:00",
-      opening_days_2: "Lun, Mar, Jeu",
-      opening_time_2: "15:00 - 18:00",
-      hours_note: "Rendez-vous hors horaires habituels sur accord individuel.",
-      location_title: "Accès & localisation",
-      location_text: "Le cabinet est situé au centre de Francfort-sur-le-Main et est facilement accessible.",
-      legal_title: "Mentions légales & confidentialité",
-      impressum_title: "Mentions légales",
-      impressum_text: "Praxis Lyn Ayuk Anyi<br>Walter-Kolb-Straße 9-11<br>60594 Francfort-sur-le-Main<br><br>Téléphone : 069-625162 / 613515<br>Fax : 069-60324532<br><br>Ordre compétent : Chambre médicale de Hesse<br>Titre professionnel : Spécialiste en médecine générale",
-      privacy_title: "Confidentialité",
-      privacy_text: "La protection de vos données est importante pour nous. Vous trouverez plus d’informations dans la déclaration de confidentialité.",
-      footer_rights: "© 2026 Praxis Lyn Ayuk Anyi – Tous droits réservés.",
-      footer_impressum: "Mentions légales",
-      footer_privacy: "Confidentialité",
-      seo_footer_text: "Votre cabinet de médecine générale à Francfort-sur-le-Main pour la médecine générale, les examens préventifs et un accompagnement médical individuel. Nous proposons des rendez-vous rapides et traitons les patients en allemand, anglais et français.",
-      whatsapp_label: "Demande de rendez-vous WhatsApp",
-      whatsapp_message: "Bonjour, je souhaite demander un rendez-vous.\n\nNom :\nMotif de la visite :\nNuméro de téléphone :\n\nPour toute demande de rendez-vous, veuillez indiquer votre nom, le motif de votre visite ainsi que votre numéro de téléphone. Nous vous répondrons dans les meilleurs délais.\n\nVotre cabinet Lyn Ayuk Anyi"
-    }
+fr: {
+  skip_link: "Aller au contenu",
+  brand_subtitle: "Spécialiste en médecine générale",
+  nav_home: "Accueil",
+  nav_doctor: "Médecin",
+  nav_services: "Services",
+  nav_trust: "Confiance",
+  nav_contact: "Contact",
+  nav_hours: "Horaires",
+  nav_location: "Accès",
+  nav_legal: "Mentions légales",
+  hero_line_1: "Votre cabinet de médecine générale à Francfort-sur-le-Main",
+  hero_line_2: "Spécialiste en médecine générale",
+  welcome_line_1: "Bienvenue",
+  welcome_line_2: "Nos services pour patients privés et assurés par les caisses d’assurance maladie",
+  hero_contact_title: "Une médecine responsable, personnelle et proche de vous",
+  phone_label: "Téléphone :",
+  fax_label: "Fax :",
+  hero_btn_contact: "Contact",
+  hero_btn_hours: "Horaires",
+  doctor_title: "Votre médecin",
+  doctor_intro: "Médecine générale personnalisée – des soins aigus à l’accompagnement de long terme.",
+  doctor_text: "Spécialiste en médecine générale, avec un accent sur le diagnostic structuré, la prise en charge centrée sur le patient et des conseils médicaux clairs.",
+  doctor_focus_title: "Domaines clés",
+  doctor_focus_1: "Consultation et traitement en médecine générale",
+  doctor_focus_2: "Prévention et bilans de santé",
+  doctor_focus_3: "Prévention des risques cardiovasculaires et métaboliques fréquents",
+  doctor_focus_4: "Communication calme et centrée sur le patient",
+  trust_title: "Confiance & qualité médicale",
+  trust_intro: "Une prise en charge fiable en médecine générale repose sur l’expérience, une communication claire et une pratique médicale rigoureuse.",
+  trust_1_title: "Compétence médicale spécialisée",
+  trust_1_text: "Traitement assuré par une spécialiste expérimentée en médecine générale.",
+  trust_2_title: "Prise en charge multilingue",
+  trust_2_text: "Allemand, anglais et français – une communication claire pour tous les patients.",
+  trust_3_title: "Situation centrale",
+  trust_3_text: "Cabinet bien situé à Francfort avec accompagnement personnalisé pour les rendez-vous.",
+  services_title: "Services",
+  services_intro: "Médecine de premier recours moderne selon les standards de qualité actuels.",
+  service_1_title: "Médecine générale",
+  service_1_item_1: "Consultation aiguë et diagnostic initial",
+  service_1_item_2: "Traitement des maladies courantes",
+  service_1_item_3: "Rendez-vous de contrôle et de suivi",
+  service_2_title: "Prévention & soins préventifs",
+  service_2_item_1: "Bilans de santé",
+  service_2_item_2: "Conseil vaccinal et vaccinations",
+  service_2_item_3: "Dépistage précoce et conseil sur les risques",
+  service_3_title: "Services du cabinet",
+  service_3_item_1: "Prise de rendez-vous",
+  service_3_item_2: "Gestion des ordonnances et orientations",
+  service_3_item_3: "Suivi fiable",
+  whatsapp_cta_title: "Demander un rendez-vous via l’icône WhatsApp",
+  whatsapp_cta_helper: "Veuillez cliquer sur l’icône → envoyer le message → nous vous répondrons rapidement",
+  whatsapp_cta_trust: "Réponse pendant les horaires d’ouverture",
+  contact_title: "Contact & horaires",
+  contact_card_title: "Adresse du cabinet & contact",
+  address_label: "Adresse :",
+  contact_notice: "En cas d’urgence vitale, veuillez appeler le 112. Pour des problèmes médicaux urgents en dehors des horaires d’ouverture, contactez le service médical de garde au 116117.",
+  hours_title: "Horaires",
+  opening_note: "Consultations sur rendez-vous",
+  opening_days_1: "Lun - Ven",
+  opening_time_1: "08:00 - 13:00",
+  opening_days_2: "Lun, Mar, Jeu",
+  opening_time_2: "15:00 - 18:00",
+  hours_note: "Rendez-vous en dehors des horaires habituels sur accord individuel.",
+  location_title: "Accès & localisation",
+  location_text: "Le cabinet est situé au centre de Francfort-sur-le-Main et est facilement accessible.",
+  legal_title: "Mentions légales & confidentialité",
+  impressum_title: "Mentions légales",
+  impressum_text: "Praxis Lyn Ayuk Anyi<br>Walter-Kolb-Straße 9-11<br>60594 Francfort-sur-le-Main<br><br>Téléphone : 069-625162 / 613515<br>Fax : 069-60324532<br><br>Ordre compétent : Chambre médicale de Hesse<br>Titre professionnel : Spécialiste en médecine générale",
+  privacy_title: "Confidentialité",
+  privacy_text: "La protection de vos données est importante pour nous. Vous trouverez plus d’informations dans la déclaration de confidentialité.",
+  footer_rights: "© 2026 Praxis Lyn Ayuk Anyi – Tous droits réservés.",
+  footer_impressum: "Mentions légales",
+  footer_privacy: "Confidentialité",
+  seo_footer_text: "Votre cabinet de médecine générale à Francfort-sur-le-Main pour la médecine générale, les examens préventifs et un accompagnement médical individuel. Nous proposons des rendez-vous rapides et traitons les patients en allemand, anglais et français.",
+  whatsapp_label: "Demande de rendez-vous WhatsApp",
+  whatsapp_message: "Bonjour, je souhaite demander un rendez-vous.\n\nNom :\nMotif de la visite :\nNuméro de téléphone :\n\nPour toute demande de rendez-vous, veuillez indiquer votre nom, le motif de votre visite ainsi que votre numéro de téléphone. Nous vous répondrons dans les meilleurs délais.\n\nVotre Praxis Lyn Ayuk Anyi"
+}
   };
 
   function setLanguage(lang) {
