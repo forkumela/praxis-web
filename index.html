@@ -1116,6 +1116,176 @@
     },
     "availableLanguage": ["German", "English", "French"]
   }
+
+    /* ================================
+   PREMIUM ELITE TYPOGRAPHY UPGRADE
+   Praxis Lyn Ayuk Anyi
+================================ */
+
+:root {
+  --font-hero: clamp(2.7rem, 6vw, 5.8rem);
+  --font-section: clamp(2rem, 4vw, 3.4rem);
+  --font-card-title: clamp(1.35rem, 2vw, 1.75rem);
+  --font-body: clamp(1.05rem, 1.4vw, 1.22rem);
+  --font-small: clamp(0.98rem, 1.2vw, 1.08rem);
+}
+
+/* Global readability */
+body {
+  font-size: var(--font-body);
+  line-height: 1.75;
+  letter-spacing: -0.01em;
+}
+
+/* Navigation */
+nav a,
+.nav a,
+.menu a {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+/* Hero premium scale */
+.hero h1,
+header h1,
+h1 {
+  font-size: var(--font-hero);
+  line-height: 1.02;
+  font-weight: 900;
+  letter-spacing: -0.055em;
+}
+
+.hero p,
+.hero-subtitle,
+header p {
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+/* Section headings */
+h2 {
+  font-size: var(--font-section);
+  line-height: 1.12;
+  font-weight: 850;
+  letter-spacing: -0.04em;
+  margin-bottom: 1.4rem;
+}
+
+h3 {
+  font-size: var(--font-card-title);
+  line-height: 1.25;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+/* Paragraphs and lists */
+p,
+li {
+  font-size: var(--font-body);
+  line-height: 1.75;
+}
+
+section p {
+  max-width: 72ch;
+}
+
+/* Buttons */
+a.button,
+.btn,
+.cta,
+button {
+  font-size: 1.08rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  padding: 0.95rem 1.45rem;
+}
+
+/* Cards */
+.card,
+.service-card,
+.trust-card,
+.info-card {
+  font-size: var(--font-body);
+}
+
+.card p,
+.service-card p,
+.trust-card p,
+.info-card p {
+  font-size: var(--font-small);
+}
+
+/* Contact / opening hours emphasis */
+.contact,
+.opening-hours,
+.sprechzeiten {
+  font-size: clamp(1.08rem, 1.6vw, 1.25rem);
+}
+
+/* Mobile premium tuning */
+@media (max-width: 768px) {
+  body {
+    font-size: 1.06rem;
+    line-height: 1.72;
+  }
+
+  h1,
+  .hero h1,
+  header h1 {
+    font-size: clamp(2.65rem, 13vw, 4rem);
+    line-height: 1.03;
+    letter-spacing: -0.055em;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 9vw, 2.75rem);
+    line-height: 1.12;
+  }
+
+  h3 {
+    font-size: 1.35rem;
+  }
+
+  p,
+  li {
+    font-size: 1.06rem;
+  }
+
+  nav a,
+  .nav a,
+  .menu a {
+    font-size: 1rem;
+  }
+
+  a.button,
+  .btn,
+  .cta,
+  button {
+    font-size: 1.05rem;
+    padding: 0.9rem 1.25rem;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 420px) {
+  h1,
+  .hero h1,
+  header h1 {
+    font-size: 2.55rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  body,
+  p,
+  li {
+    font-size: 1.04rem;
+  }
+}
   </script>
 </head>
 
