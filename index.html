@@ -1255,13 +1255,14 @@
 
     .contact-hero {
       position: relative;
-      min-height: 315px;
+      min-height: 390px;
     }
 
     .practice-clock-card {
       position: absolute;
       right: 0;
-      bottom: 0;
+      top: 86px;
+      bottom: auto;
       width: 370px;
       background: linear-gradient(145deg, #ffffff 0%, #f4fbf8 100%);
       border: 1px solid rgba(27, 126, 92, 0.24);
@@ -1322,9 +1323,51 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2rem;
       box-shadow: 0 8px 18px rgba(27, 126, 92, 0.18);
       flex-shrink: 0;
+      position: relative;
+      background: radial-gradient(circle, #ffffff 0%, #f4fbf8 100%);
+    }
+
+    .clock-icon::before {
+      content: "";
+      position: absolute;
+      inset: 9px;
+      border: 1.5px solid rgba(27, 126, 92, 0.18);
+      border-radius: 50%;
+    }
+
+    .clock-icon::after {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: #1b7e5c;
+      border-radius: 50%;
+      z-index: 3;
+    }
+
+    .clock-hand-hour,
+    .clock-hand-minute {
+      position: absolute;
+      left: 50%;
+      bottom: 50%;
+      width: 4px;
+      border-radius: 999px;
+      background: #1b7e5c;
+      transform-origin: bottom center;
+      z-index: 2;
+      transition: transform 0.25s ease;
+    }
+
+    .clock-hand-hour {
+      height: 20px;
+      transform: translateX(-50%) rotate(0deg);
+    }
+
+    .clock-hand-minute {
+      height: 27px;
+      transform: translateX(-50%) rotate(90deg);
     }
 
     #liveClock {
@@ -1373,6 +1416,7 @@
       .practice-clock-card {
         position: relative;
         right: auto;
+        top: auto;
         bottom: auto;
         margin: 1.4rem auto 0;
         width: 100%;
@@ -1555,7 +1599,10 @@
                   </div>
 
                   <div class="clock-main-row">
-                    <div class="clock-icon" aria-hidden="true">◷</div>
+                    <div class="clock-icon" aria-hidden="true">
+                      <span class="clock-hand-hour"></span>
+                      <span class="clock-hand-minute"></span>
+                    </div>
 
                     <div>
                       <div id="liveClock">00:00:00</div>
@@ -2195,6 +2242,19 @@ fr: {
       month: "long",
       year: "numeric"
     });
+
+    const hourHand = document.querySelector(".clock-hand-hour");
+    const minuteHand = document.querySelector(".clock-hand-minute");
+
+    if (hourHand && minuteHand) {
+      const second = berlinTime.getSeconds();
+      const hourForClock = berlinTime.getHours() % 12;
+      const hourDegrees = (hourForClock * 30) + (minute * 0.5);
+      const minuteDegrees = (minute * 6) + (second * 0.1);
+
+      hourHand.style.transform = "translateX(-50%) rotate(" + hourDegrees + "deg)";
+      minuteHand.style.transform = "translateX(-50%) rotate(" + minuteDegrees + "deg)";
+    }
 
     if (isOpen) {
       practiceStatus.textContent = t.clock_status_open;
