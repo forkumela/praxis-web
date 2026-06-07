@@ -1076,10 +1076,356 @@
         text-align: center;
       }
     }
-  </style>
+  
+
+    /* ================================
+       PREMIUM ELITE TYPOGRAPHY UPGRADE
+       Praxis Lyn Ayuk Anyi
+    ================================ */
+    
+    :root {
+      --font-hero: clamp(2.7rem, 6vw, 5.8rem);
+      --font-section: clamp(2rem, 4vw, 3.4rem);
+      --font-card-title: clamp(1.35rem, 2vw, 1.75rem);
+      --font-body: clamp(1.05rem, 1.4vw, 1.22rem);
+      --font-small: clamp(0.98rem, 1.2vw, 1.08rem);
+    }
+    
+    /* Global readability */
+    body {
+      font-size: var(--font-body);
+      line-height: 1.75;
+      letter-spacing: -0.01em;
+    }
+    
+    /* Navigation */
+    nav a,
+    .nav a,
+    .menu a {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+    
+    /* Hero premium scale */
+    .hero h1,
+    header h1,
+    h1 {
+      font-size: var(--font-hero);
+      line-height: 1.02;
+      font-weight: 900;
+      letter-spacing: -0.055em;
+    }
+    
+    .hero p,
+    .hero-subtitle,
+    header p {
+      font-size: clamp(1.25rem, 2vw, 1.65rem);
+      line-height: 1.55;
+      font-weight: 500;
+    }
+    
+    /* Section headings */
+    h2 {
+      font-size: var(--font-section);
+      line-height: 1.12;
+      font-weight: 850;
+      letter-spacing: -0.04em;
+      margin-bottom: 1.4rem;
+    }
+    
+    h3 {
+      font-size: var(--font-card-title);
+      line-height: 1.25;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+    }
+    
+    /* Paragraphs and lists */
+    p,
+    li {
+      font-size: var(--font-body);
+      line-height: 1.75;
+    }
+    
+    section p {
+      max-width: 72ch;
+    }
+    
+    /* Buttons */
+    a.button,
+    .btn,
+    .cta,
+    button {
+      font-size: 1.08rem;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      padding: 0.95rem 1.45rem;
+    }
+    
+    /* Cards */
+    .card,
+    .service-card,
+    .trust-card,
+    .info-card {
+      font-size: var(--font-body);
+    }
+    
+    .card p,
+    .service-card p,
+    .trust-card p,
+    .info-card p {
+      font-size: var(--font-small);
+    }
+    
+    /* Contact / opening hours emphasis */
+    .contact,
+    .opening-hours,
+    .sprechzeiten {
+      font-size: clamp(1.08rem, 1.6vw, 1.25rem);
+    }
+    
+    /* Mobile premium tuning */
+    @media (max-width: 768px) {
+      body {
+        font-size: 1.06rem;
+        line-height: 1.72;
+      }
+    
+      h1,
+      .hero h1,
+      header h1 {
+        font-size: clamp(2.65rem, 13vw, 4rem);
+        line-height: 1.03;
+        letter-spacing: -0.055em;
+      }
+    
+      h2 {
+        font-size: clamp(2rem, 9vw, 2.75rem);
+        line-height: 1.12;
+      }
+    
+      h3 {
+        font-size: 1.35rem;
+      }
+    
+      p,
+      li {
+        font-size: 1.06rem;
+      }
+    
+      nav a,
+      .nav a,
+      .menu a {
+        font-size: 1rem;
+      }
+    
+      a.button,
+      .btn,
+      .cta,
+      button {
+        font-size: 1.05rem;
+        padding: 0.9rem 1.25rem;
+      }
+    }
+    
+    /* Very small phones */
+    @media (max-width: 420px) {
+      h1,
+      .hero h1,
+      header h1 {
+        font-size: 2.55rem;
+      }
+    
+      h2 {
+        font-size: 2rem;
+      }
+    
+      body,
+      p,
+      li {
+        font-size: 1.04rem;
+      }
+    }
+
+    /* ================================
+       3D LIVE PRACTICE CLOCK CARD
+       German / English / French Ready
+    ================================ */
+
+    .contact-hero {
+      position: relative;
+      min-height: 315px;
+    }
+
+    .practice-clock-card {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 370px;
+      background: linear-gradient(145deg, #ffffff 0%, #f4fbf8 100%);
+      border: 1px solid rgba(27, 126, 92, 0.24);
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow:
+        0 22px 42px rgba(0, 35, 35, 0.16),
+        0 4px 10px rgba(0, 35, 35, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95);
+      z-index: 2;
+    }
+
+    .clock-status-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 18px 20px;
+      background: linear-gradient(135deg, #dff3ec 0%, #bdebdc 100%);
+      color: #0f5e44;
+      font-size: 1.22rem;
+      font-weight: 900;
+    }
+
+    .clock-status-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #19a974, #0f7f59);
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 16px rgba(15, 127, 89, 0.35);
+      font-size: 1.35rem;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .clock-status-icon.closed {
+      background: linear-gradient(145deg, #d9534f, #a93430);
+      box-shadow: 0 8px 16px rgba(169, 52, 48, 0.28);
+    }
+
+    .clock-main-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 24px 28px 18px;
+    }
+
+    .clock-icon {
+      width: 72px;
+      height: 72px;
+      border: 4px solid #1b7e5c;
+      border-radius: 50%;
+      color: #1b7e5c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 8px 18px rgba(27, 126, 92, 0.18);
+      flex-shrink: 0;
+    }
+
+    #liveClock {
+      font-size: 2.25rem;
+      line-height: 1;
+      font-weight: 900;
+      color: #0f5e44;
+      letter-spacing: 1px;
+      text-shadow: 0 3px 5px rgba(0, 0, 0, 0.12);
+      white-space: nowrap;
+    }
+
+    #liveDate {
+      margin-top: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1e2c34;
+    }
+
+    .clock-divider {
+      height: 1px;
+      margin: 0 28px;
+      background: linear-gradient(90deg, transparent, #b7c8d4, transparent);
+    }
+
+    .clock-address-row {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 18px 28px 24px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1e2c34;
+    }
+
+    .clock-location-icon {
+      font-size: 1.7rem;
+      line-height: 1;
+    }
+
+    @media (max-width: 920px) {
+      .contact-hero {
+        min-height: auto;
+      }
+
+      .practice-clock-card {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        margin: 1.4rem auto 0;
+        width: 100%;
+        max-width: 390px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .practice-clock-card {
+        max-width: 100%;
+        border-radius: 20px;
+      }
+
+      .clock-status-row {
+        font-size: 1.05rem;
+        padding: 14px;
+      }
+
+      .clock-status-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1.15rem;
+      }
+
+      .clock-main-row {
+        gap: 14px;
+        padding: 20px;
+      }
+
+      .clock-icon {
+        width: 58px;
+        height: 58px;
+        font-size: 1.6rem;
+      }
+
+      #liveClock {
+        font-size: 1.85rem;
+      }
+
+      #liveDate {
+        font-size: 0.92rem;
+      }
+
+      .clock-address-row {
+        padding: 16px 20px 20px;
+        font-size: 0.92rem;
+      }
+    }
+
+</style>
 
   <script type="application/ld+json">
-  {
+{
     "@context": "https://schema.org",
     "@type": ["MedicalClinic", "Physician"],
     "@id": "https://www.praxis-lyn-ayuk-anyi.de/#medicalclinic",
@@ -1116,176 +1462,6 @@
     },
     "availableLanguage": ["German", "English", "French"]
   }
-
-    /* ================================
-   PREMIUM ELITE TYPOGRAPHY UPGRADE
-   Praxis Lyn Ayuk Anyi
-================================ */
-
-:root {
-  --font-hero: clamp(2.7rem, 6vw, 5.8rem);
-  --font-section: clamp(2rem, 4vw, 3.4rem);
-  --font-card-title: clamp(1.35rem, 2vw, 1.75rem);
-  --font-body: clamp(1.05rem, 1.4vw, 1.22rem);
-  --font-small: clamp(0.98rem, 1.2vw, 1.08rem);
-}
-
-/* Global readability */
-body {
-  font-size: var(--font-body);
-  line-height: 1.75;
-  letter-spacing: -0.01em;
-}
-
-/* Navigation */
-nav a,
-.nav a,
-.menu a {
-  font-size: 1.05rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-}
-
-/* Hero premium scale */
-.hero h1,
-header h1,
-h1 {
-  font-size: var(--font-hero);
-  line-height: 1.02;
-  font-weight: 900;
-  letter-spacing: -0.055em;
-}
-
-.hero p,
-.hero-subtitle,
-header p {
-  font-size: clamp(1.25rem, 2vw, 1.65rem);
-  line-height: 1.55;
-  font-weight: 500;
-}
-
-/* Section headings */
-h2 {
-  font-size: var(--font-section);
-  line-height: 1.12;
-  font-weight: 850;
-  letter-spacing: -0.04em;
-  margin-bottom: 1.4rem;
-}
-
-h3 {
-  font-size: var(--font-card-title);
-  line-height: 1.25;
-  font-weight: 800;
-  letter-spacing: -0.025em;
-}
-
-/* Paragraphs and lists */
-p,
-li {
-  font-size: var(--font-body);
-  line-height: 1.75;
-}
-
-section p {
-  max-width: 72ch;
-}
-
-/* Buttons */
-a.button,
-.btn,
-.cta,
-button {
-  font-size: 1.08rem;
-  font-weight: 800;
-  letter-spacing: 0.01em;
-  padding: 0.95rem 1.45rem;
-}
-
-/* Cards */
-.card,
-.service-card,
-.trust-card,
-.info-card {
-  font-size: var(--font-body);
-}
-
-.card p,
-.service-card p,
-.trust-card p,
-.info-card p {
-  font-size: var(--font-small);
-}
-
-/* Contact / opening hours emphasis */
-.contact,
-.opening-hours,
-.sprechzeiten {
-  font-size: clamp(1.08rem, 1.6vw, 1.25rem);
-}
-
-/* Mobile premium tuning */
-@media (max-width: 768px) {
-  body {
-    font-size: 1.06rem;
-    line-height: 1.72;
-  }
-
-  h1,
-  .hero h1,
-  header h1 {
-    font-size: clamp(2.65rem, 13vw, 4rem);
-    line-height: 1.03;
-    letter-spacing: -0.055em;
-  }
-
-  h2 {
-    font-size: clamp(2rem, 9vw, 2.75rem);
-    line-height: 1.12;
-  }
-
-  h3 {
-    font-size: 1.35rem;
-  }
-
-  p,
-  li {
-    font-size: 1.06rem;
-  }
-
-  nav a,
-  .nav a,
-  .menu a {
-    font-size: 1rem;
-  }
-
-  a.button,
-  .btn,
-  .cta,
-  button {
-    font-size: 1.05rem;
-    padding: 0.9rem 1.25rem;
-  }
-}
-
-/* Very small phones */
-@media (max-width: 420px) {
-  h1,
-  .hero h1,
-  header h1 {
-    font-size: 2.55rem;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-
-  body,
-  p,
-  li {
-    font-size: 1.04rem;
-  }
-}
   </script>
 </head>
 
@@ -1372,6 +1548,32 @@ button {
                 <a class="btn btn-primary" href="#kontakt" data-key="hero_btn_contact">Kontakt</a>
                 <a class="btn btn-outline" href="#zeiten" data-key="hero_btn_hours">Öffnungszeiten</a>
               </div>
+                <div class="practice-clock-card">
+                  <div class="clock-status-row">
+                    <span class="clock-status-icon" id="practiceStatusIcon">✓</span>
+                    <span id="practiceStatus" data-key="clock_status_open" aria-live="polite">Praxis geöffnet</span>
+                  </div>
+
+                  <div class="clock-main-row">
+                    <div class="clock-icon" aria-hidden="true">◷</div>
+
+                    <div>
+                      <div id="liveClock">00:00:00</div>
+                      <div id="liveDate">Montag, 01. Januar 2026</div>
+                    </div>
+                  </div>
+
+                  <div class="clock-divider"></div>
+
+                  <div class="clock-address-row">
+                    <span class="clock-location-icon" aria-hidden="true">📍</span>
+                    <span>
+                      Walter-Kolb-Straße 9-11<br>
+                      60594 Frankfurt am Main
+                    </span>
+                  </div>
+                </div>
+
             </div>
           </div>
         </div>
@@ -1694,6 +1896,8 @@ button {
       footer_impressum: "Impressum",
       footer_privacy: "Datenschutz",
       seo_footer_text: "Ihre Hausarztpraxis in Frankfurt am Main für Allgemeinmedizin, Vorsorgeuntersuchungen und individuelle Betreuung. Wir bieten schnelle Termine und behandeln Patienten auf Deutsch, Englisch und Französisch.",
+      clock_status_open: "Praxis geöffnet",
+      clock_status_closed: "Praxis geschlossen",
       whatsapp_label: "WhatsApp Terminanfrage",
       whatsapp_message: "Guten Tag, ich möchte einen Termin vereinbaren.\n\nName:\nGrund des Besuchs:\nTelefonnummer:\n\nFür Terminanfragen geben Sie bitte Ihren Namen, den Grund Ihres Besuchs sowie Ihre Telefonnummer an. Wir melden uns schnellstmöglich bei Ihnen zurück.\n\nIhre Praxis Lyn Ayuk Anyi"
     },
@@ -1773,6 +1977,8 @@ en: {
   footer_impressum: "Legal Notice",
   footer_privacy: "Privacy",
   seo_footer_text: "Your primary care practice in Frankfurt am Main for general medicine, preventive check-ups and individual medical care. We offer timely appointments and treat patients in German, English and French.",
+  clock_status_open: "Practice open",
+  clock_status_closed: "Practice closed",
   whatsapp_label: "WhatsApp appointment request",
   whatsapp_message: "Hello, I would like to request an appointment.\n\nName:\nReason for visit:\nPhone number:\n\nFor appointment requests, please provide your name, the reason for your visit and your phone number. We will get back to you as soon as possible.\n\nYour Praxis Lyn Ayuk Anyi"
 },
@@ -1852,15 +2058,20 @@ fr: {
   footer_impressum: "Mentions légales",
   footer_privacy: "Confidentialité",
   seo_footer_text: "Votre cabinet de médecine générale à Francfort-sur-le-Main pour la médecine générale, les examens préventifs et un accompagnement médical individuel. Nous proposons des rendez-vous rapides et traitons les patients en allemand, anglais et français.",
+  clock_status_open: "Cabinet ouvert",
+  clock_status_closed: "Cabinet fermé",
   whatsapp_label: "Demande de rendez-vous WhatsApp",
   whatsapp_message: "Bonjour, je souhaite demander un rendez-vous.\n\nNom :\nMotif de la visite :\nNuméro de téléphone :\n\nPour toute demande de rendez-vous, veuillez indiquer votre nom, le motif de votre visite ainsi que votre numéro de téléphone. Nous vous répondrons dans les meilleurs délais.\n\nVotre Praxis Lyn Ayuk Anyi"
 }
   };
 
+  let currentLang = "de";
+
   function setLanguage(lang) {
     const t = translations[lang];
     if (!t) return;
 
+    currentLang = lang;
     document.documentElement.lang = lang;
 
     document.querySelectorAll("[data-key]").forEach(function (el) {
@@ -1886,6 +2097,8 @@ fr: {
       link.setAttribute("aria-label", t.whatsapp_label || "WhatsApp");
       link.setAttribute("title", t.whatsapp_label || "WhatsApp");
     });
+
+    updatePracticeClock();
   }
 
   document.querySelectorAll(".lang-btn").forEach(function (btn) {
@@ -1922,6 +2135,79 @@ fr: {
       }
     });
   }
+
+
+  function getPracticeLanguage() {
+    return document.documentElement.lang || currentLang || "de";
+  }
+
+  function updatePracticeClock() {
+    const now = new Date();
+
+    const berlinTime = new Date(
+      now.toLocaleString("en-US", { timeZone: "Europe/Berlin" })
+    );
+
+    const lang = getPracticeLanguage();
+    const t = translations[lang] || translations.de;
+
+    const day = berlinTime.getDay();
+    const hour = berlinTime.getHours();
+    const minute = berlinTime.getMinutes();
+    const currentMinutes = hour * 60 + minute;
+
+    const morningOpen =
+      day >= 1 &&
+      day <= 5 &&
+      currentMinutes >= 480 &&
+      currentMinutes < 780;
+
+    const afternoonOpen =
+      (day === 1 || day === 2 || day === 4) &&
+      currentMinutes >= 900 &&
+      currentMinutes < 1080;
+
+    const isOpen = morningOpen || afternoonOpen;
+
+    const liveClock = document.getElementById("liveClock");
+    const liveDate = document.getElementById("liveDate");
+    const practiceStatus = document.getElementById("practiceStatus");
+    const practiceStatusIcon = document.getElementById("practiceStatusIcon");
+
+    if (!liveClock || !liveDate || !practiceStatus || !practiceStatusIcon) return;
+
+    const locale =
+      lang === "en"
+        ? "en-GB"
+        : lang === "fr"
+          ? "fr-FR"
+          : "de-DE";
+
+    liveClock.textContent = berlinTime.toLocaleTimeString(locale, {
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit"
+    });
+
+    liveDate.textContent = berlinTime.toLocaleDateString(locale, {
+      weekday: "long",
+      day: "2-digit",
+      month: "long",
+      year: "numeric"
+    });
+
+    if (isOpen) {
+      practiceStatus.textContent = t.clock_status_open;
+      practiceStatusIcon.textContent = "✓";
+      practiceStatusIcon.classList.remove("closed");
+    } else {
+      practiceStatus.textContent = t.clock_status_closed;
+      practiceStatusIcon.textContent = "×";
+      practiceStatusIcon.classList.add("closed");
+    }
+  }
+
+  setInterval(updatePracticeClock, 1000);
 
   setLanguage("de");
 </script>
